@@ -5,19 +5,28 @@ class HomeViewController: UIViewController {
     private let horizontalScrollView: UIScrollView = {
         let scollView = UIScrollView()
         scollView.bounces = false
-        scollView.backgroundColor = .red
         scollView.isPagingEnabled = true
         scollView.showsHorizontalScrollIndicator = false
         return scollView
     }()
     
-    private let forYouPageViewController = UIPageViewController(transitionStyle: .scroll, navigationOrientation: .vertical)
+    private let forYouPageViewController = UIPageViewController(
+        transitionStyle: .scroll, navigationOrientation: .vertical)
     
     private let followingPageViewController = UIPageViewController(
         transitionStyle: .scroll, navigationOrientation: .vertical)
     
     private var forYouPost = PostModel.mockModels()
     private var followingPost = PostModel.mockModels()
+    
+    private let control: UISegmentedControl = {
+        let titles = ["Following", "For You"]
+        let control = UISegmentedControl(items: titles)
+        control.selectedSegmentIndex = 1
+        control.backgroundColor = nil
+        control.selectedSegmentTintColor = .white
+        return control
+    }()
     
     // MARK: - Lifecycles
     
@@ -27,13 +36,32 @@ class HomeViewController: UIViewController {
         title = "Home"
         view.addSubview(horizontalScrollView)
         setUpFeed()
+        horizontalScrollView.delegate = self
         horizontalScrollView.contentOffset = CGPoint(x: view.width, y: 0)
+        setUpHeaderButtons()
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         horizontalScrollView.frame = view.bounds
     }
+    
+    // MARK: - Header
+    
+    private func setUpHeaderButtons() {
+        control.addTarget(self, action: #selector(didChangeSegmentControl),
+                          for: .valueChanged)
+        navigationItem.titleView = control
+    }
+    
+    @objc private func didChangeSegmentControl(_ sender: UISegmentedControl) {
+        horizontalScrollView.setContentOffset(
+            CGPoint(x: view.width * CGFloat(sender.selectedSegmentIndex),
+                    y: 0), animated: true)
+    }
+    
+    
+    // MARK: - Scroll
     
     private func setUpFeed() {
         horizontalScrollView.contentSize = CGSize(
@@ -130,6 +158,16 @@ extension HomeViewController: UIPageViewControllerDataSource {
         } else {
             // For you
             return forYouPost
+        }
+    }
+}
+
+extension HomeViewController: UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if scrollView.contentOffset.x == 0 || scrollView.contentOffset.x <= view.width / 2 {
+            control.selectedSegmentIndex = 0
+        } else if scrollView.contentOffset.x > view.width / 2 {
+            control.selectedSegmentIndex = 1
         }
     }
 }
