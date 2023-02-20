@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		80223D8D29A3E3C000245149 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 80223D8C29A3E3C000245149 /* SDWebImage */; };
 		80223D9529A3FE8800245149 /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80223D9429A3FE8800245149 /* PostModel.swift */; };
-		803D9D3929A3CC1C00211763 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 803D9D3829A3CC1C00211763 /* GoogleService-Info.plist */; };
+		80223D9729A401E200245149 /* UIView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80223D9629A401E200245149 /* UIView + Extension.swift */; };
 		803D9D3C29A3D24400211763 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 803D9D3B29A3D24400211763 /* FirebaseCrashlytics */; };
 		8090EA2729A3C745003BDF33 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8090EA2629A3C745003BDF33 /* MainTabBarController.swift */; };
 		8090EA2A29A3C7E2003BDF33 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 8090EA2929A3C7E2003BDF33 /* FirebaseAuth */; };
@@ -41,7 +41,7 @@
 
 /* Begin PBXFileReference section */
 		80223D9429A3FE8800245149 /* PostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PostModel.swift; path = TikTok/Extensions/PostModel.swift; sourceTree = SOURCE_ROOT; };
-		803D9D3829A3CC1C00211763 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		80223D9629A401E200245149 /* UIView + Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView + Extension.swift"; sourceTree = "<group>"; };
 		8090EA2629A3C745003BDF33 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		8090EA3829A3CA7C003BDF33 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		8090EA3A29A3CA86003BDF33 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
@@ -96,7 +96,7 @@
 		80223D9129A3F38F00245149 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
-				80223D9229A3F3A100245149 /* UIView + Extension.swift */,
+				80223D9629A401E200245149 /* UIView + Extension.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -111,7 +111,6 @@
 		8090EA1E29A3C6A7003BDF33 /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
-				80223D8E29A3F21300245149 /* GoogleService-Info.plist */,
 				80F17EDF29A3AF190061B6F4 /* Assets.xcassets */,
 				80F17EE129A3AF190061B6F4 /* LaunchScreen.storyboard */,
 				80F17EE429A3AF190061B6F4 /* Info.plist */,
@@ -301,7 +300,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				8090EA5529A3CB7C003BDF33 /* README.md in Resources */,
-				80223D8F29A3F21300245149 /* GoogleService-Info.plist in Resources */,
 				80F17EE329A3AF190061B6F4 /* LaunchScreen.storyboard in Resources */,
 				80F17EE029A3AF190061B6F4 /* Assets.xcassets in Resources */,
 			);
@@ -323,7 +321,6 @@
 				80F17ED929A3AF180061B6F4 /* SceneDelegate.swift in Sources */,
 				8090EA5329A3CB44003BDF33 /* ProfileViewController.swift in Sources */,
 				8090EA4B29A3CB24003BDF33 /* HomeViewController.swift in Sources */,
-				80223D9329A3F3A100245149 /* UIView + Extension.swift in Sources */,
 				8090EA3B29A3CA86003BDF33 /* DatabaseManager.swift in Sources */,
 				8090EA3929A3CA7C003BDF33 /* StorageManager.swift in Sources */,
 				8090EA5129A3CB3D003BDF33 /* NotificationsViewController.swift in Sources */,
@@ -332,6 +329,7 @@
 				8090EA3F29A3CAA7003BDF33 /* HapticsManager.swift in Sources */,
 				8090EA4329A3CAE3003BDF33 /* SignInViewController.swift in Sources */,
 				8090EA4F29A3CB31003BDF33 /* CameraViewController.swift in Sources */,
+				80223D9729A401E200245149 /* UIView + Extension.swift in Sources */,
 				8090EA4729A3CAF6003BDF33 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
