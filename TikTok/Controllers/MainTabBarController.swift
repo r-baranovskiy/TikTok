@@ -17,25 +17,19 @@ final class MainTabBarController: UITabBarController {
     
     private func configureMainTabBar() {
         cameraVC.tabBarItem = UITabBarItem(
-            title: nil, image: UIImage(systemName: "camera"), tag: 3)
+            title: nil, image: UIImage(systemName: "camera", withConfiguration: UIImage.SymbolConfiguration(weight: .heavy)), tag: 3)
         
         viewControllers = [
-            createNavigationVC(title: "Home", rootVC: homeVC,
-                               imageSystemName: "house"),
-            createNavigationVC(title: "Explore", rootVC: exploreVC,
-                               imageSystemName: "safari"),
+            createNavigationVC(rootVC: homeVC, imageSystemName: "house"),
+            createNavigationVC(rootVC: exploreVC, imageSystemName: "safari"),
             cameraVC,
-            createNavigationVC(title: "Notifications", rootVC: notificationsVC,
-                               imageSystemName: "bell"),
-            createNavigationVC(title: "Profile", rootVC: profileVC,
-                               imageSystemName: "person.circle")
+            createNavigationVC(rootVC: notificationsVC, imageSystemName: "bell"),
+            createNavigationVC(rootVC: profileVC, imageSystemName: "person.circle")
         ]
     }
     
-    private func createNavigationVC(
-        title: String, rootVC: UIViewController, imageSystemName: String) -> UINavigationController {
+    private func createNavigationVC(rootVC: UIViewController, imageSystemName: String) -> UINavigationController {
             let navVC = UINavigationController(rootViewController: rootVC)
-            rootVC.title = title
             navVC.tabBarItem.image = UIImage(
                 systemName: imageSystemName, withConfiguration: UIImage.SymbolConfiguration(weight: .heavy))
             return navVC
