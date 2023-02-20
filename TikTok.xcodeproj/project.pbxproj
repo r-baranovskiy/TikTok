@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		80223D8D29A3E3C000245149 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 80223D8C29A3E3C000245149 /* SDWebImage */; };
+		80223D9529A3FE8800245149 /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80223D9429A3FE8800245149 /* PostModel.swift */; };
 		803D9D3929A3CC1C00211763 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 803D9D3829A3CC1C00211763 /* GoogleService-Info.plist */; };
 		803D9D3C29A3D24400211763 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 803D9D3B29A3D24400211763 /* FirebaseCrashlytics */; };
 		8090EA2729A3C745003BDF33 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8090EA2629A3C745003BDF33 /* MainTabBarController.swift */; };
@@ -39,6 +40,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		80223D9429A3FE8800245149 /* PostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PostModel.swift; path = TikTok/Extensions/PostModel.swift; sourceTree = SOURCE_ROOT; };
 		803D9D3829A3CC1C00211763 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8090EA2629A3C745003BDF33 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		8090EA3829A3CA7C003BDF33 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
@@ -128,6 +130,7 @@
 		8090EA2229A3C6CD003BDF33 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				80223D9429A3FE8800245149 /* PostModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -295,6 +298,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8090EA4529A3CAEA003BDF33 /* SignUpViewController.swift in Sources */,
+				80223D9529A3FE8800245149 /* PostModel.swift in Sources */,
 				80F17ED729A3AF180061B6F4 /* AppDelegate.swift in Sources */,
 				8090EA4D29A3CB2B003BDF33 /* ExploreViewController.swift in Sources */,
 				8090EA3D29A3CA8F003BDF33 /* AuthManager.swift in Sources */,
