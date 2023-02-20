@@ -1,7 +1,13 @@
 # The clone app TikTok
 
-### In this app you can:
+## Features:
 
+- Feed
+- Explore
+- Posting videos
+- Notifications
+- Profiles
+- And more..
 
 ### This app was written in Swift language and contains the following ...:
 
