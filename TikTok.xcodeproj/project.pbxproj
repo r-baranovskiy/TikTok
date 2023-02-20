@@ -17,7 +17,6 @@
 		8090EA3029A3C7E2003BDF33 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 8090EA2F29A3C7E2003BDF33 /* FirebaseFirestore */; };
 		8090EA3229A3C7E2003BDF33 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 8090EA3129A3C7E2003BDF33 /* FirebaseFirestoreSwift */; };
 		8090EA3429A3C7E2003BDF33 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 8090EA3329A3C7E2003BDF33 /* FirebaseStorage */; };
-		8090EA3729A3CA6F003BDF33 /* APICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8090EA3629A3CA6F003BDF33 /* APICaller.swift */; };
 		8090EA3929A3CA7C003BDF33 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8090EA3829A3CA7C003BDF33 /* StorageManager.swift */; };
 		8090EA3B29A3CA86003BDF33 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8090EA3A29A3CA86003BDF33 /* DatabaseManager.swift */; };
 		8090EA3D29A3CA8F003BDF33 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8090EA3C29A3CA8F003BDF33 /* AuthManager.swift */; };
@@ -42,7 +41,6 @@
 /* Begin PBXFileReference section */
 		803D9D3829A3CC1C00211763 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8090EA2629A3C745003BDF33 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
-		8090EA3629A3CA6F003BDF33 /* APICaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICaller.swift; sourceTree = "<group>"; };
 		8090EA3829A3CA7C003BDF33 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		8090EA3A29A3CA86003BDF33 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		8090EA3C29A3CA8F003BDF33 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
@@ -170,7 +168,6 @@
 		8090EA3529A3CA5E003BDF33 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				8090EA3629A3CA6F003BDF33 /* APICaller.swift */,
 				8090EA3829A3CA7C003BDF33 /* StorageManager.swift */,
 				8090EA3A29A3CA86003BDF33 /* DatabaseManager.swift */,
 				8090EA3C29A3CA8F003BDF33 /* AuthManager.swift */,
@@ -313,7 +310,6 @@
 				8090EA3F29A3CAA7003BDF33 /* HapticsManager.swift in Sources */,
 				8090EA4329A3CAE3003BDF33 /* SignInViewController.swift in Sources */,
 				8090EA4F29A3CB31003BDF33 /* CameraViewController.swift in Sources */,
-				8090EA3729A3CA6F003BDF33 /* APICaller.swift in Sources */,
 				8090EA4729A3CAF6003BDF33 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
