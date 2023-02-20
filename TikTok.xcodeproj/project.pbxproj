@@ -33,6 +33,7 @@
 		8090EA5129A3CB3D003BDF33 /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8090EA5029A3CB3D003BDF33 /* NotificationsViewController.swift */; };
 		8090EA5329A3CB44003BDF33 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8090EA5229A3CB44003BDF33 /* ProfileViewController.swift */; };
 		8090EA5529A3CB7C003BDF33 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 8090EA5429A3CB7C003BDF33 /* README.md */; };
+		80921DFF29A407B900A8D8C0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 80921DFE29A407B900A8D8C0 /* GoogleService-Info.plist */; };
 		80F17ED729A3AF180061B6F4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F17ED629A3AF180061B6F4 /* AppDelegate.swift */; };
 		80F17ED929A3AF180061B6F4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F17ED829A3AF180061B6F4 /* SceneDelegate.swift */; };
 		80F17EE029A3AF190061B6F4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80F17EDF29A3AF190061B6F4 /* Assets.xcassets */; };
@@ -58,6 +59,7 @@
 		8090EA5029A3CB3D003BDF33 /* NotificationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
 		8090EA5229A3CB44003BDF33 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		8090EA5429A3CB7C003BDF33 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		80921DFE29A407B900A8D8C0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		80F17ED329A3AF180061B6F4 /* TikTok.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TikTok.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		80F17ED629A3AF180061B6F4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		80F17ED829A3AF180061B6F4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 		8090EA1E29A3C6A7003BDF33 /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
+				80921DFE29A407B900A8D8C0 /* GoogleService-Info.plist */,
 				80F17EDF29A3AF190061B6F4 /* Assets.xcassets */,
 				80F17EE129A3AF190061B6F4 /* LaunchScreen.storyboard */,
 				80F17EE429A3AF190061B6F4 /* Info.plist */,
@@ -300,6 +303,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8090EA5529A3CB7C003BDF33 /* README.md in Resources */,
+				80921DFF29A407B900A8D8C0 /* GoogleService-Info.plist in Resources */,
 				80F17EE329A3AF190061B6F4 /* LaunchScreen.storyboard in Resources */,
 				80F17EE029A3AF190061B6F4 /* Assets.xcassets in Resources */,
 			);
