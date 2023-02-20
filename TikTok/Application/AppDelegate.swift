@@ -7,10 +7,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         let window = UIWindow(frame: UIScreen.main.bounds)
-        let startVC = ViewController()
-        let navVC = UINavigationController(rootViewController: startVC)
-        
-        window.rootViewController = navVC
+        window.rootViewController = MainTabBarController()
         self.window = window
         self.window?.makeKeyAndVisible()
         return true
