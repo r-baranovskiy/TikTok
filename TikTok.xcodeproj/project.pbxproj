@@ -7,18 +7,58 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		803D9D3929A3CC1C00211763 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 803D9D3829A3CC1C00211763 /* GoogleService-Info.plist */; };
+		8090EA2729A3C745003BDF33 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8090EA2629A3C745003BDF33 /* MainTabBarController.swift */; };
+		8090EA2A29A3C7E2003BDF33 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 8090EA2929A3C7E2003BDF33 /* FirebaseAuth */; };
+		8090EA2C29A3C7E2003BDF33 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 8090EA2B29A3C7E2003BDF33 /* FirebaseDatabase */; };
+		8090EA2E29A3C7E2003BDF33 /* FirebaseDatabaseSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 8090EA2D29A3C7E2003BDF33 /* FirebaseDatabaseSwift */; };
+		8090EA3029A3C7E2003BDF33 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 8090EA2F29A3C7E2003BDF33 /* FirebaseFirestore */; };
+		8090EA3229A3C7E2003BDF33 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 8090EA3129A3C7E2003BDF33 /* FirebaseFirestoreSwift */; };
+		8090EA3429A3C7E2003BDF33 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 8090EA3329A3C7E2003BDF33 /* FirebaseStorage */; };
+		8090EA3729A3CA6F003BDF33 /* APICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8090EA3629A3CA6F003BDF33 /* APICaller.swift */; };
+		8090EA3929A3CA7C003BDF33 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8090EA3829A3CA7C003BDF33 /* StorageManager.swift */; };
+		8090EA3B29A3CA86003BDF33 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8090EA3A29A3CA86003BDF33 /* DatabaseManager.swift */; };
+		8090EA3D29A3CA8F003BDF33 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8090EA3C29A3CA8F003BDF33 /* AuthManager.swift */; };
+		8090EA3F29A3CAA7003BDF33 /* HapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8090EA3E29A3CAA7003BDF33 /* HapticsManager.swift */; };
+		8090EA4129A3CAD2003BDF33 /* UserListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8090EA4029A3CAD2003BDF33 /* UserListViewController.swift */; };
+		8090EA4329A3CAE3003BDF33 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8090EA4229A3CAE3003BDF33 /* SignInViewController.swift */; };
+		8090EA4529A3CAEA003BDF33 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8090EA4429A3CAEA003BDF33 /* SignUpViewController.swift */; };
+		8090EA4729A3CAF6003BDF33 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8090EA4629A3CAF6003BDF33 /* SettingsViewController.swift */; };
+		8090EA4929A3CB0A003BDF33 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8090EA4829A3CB0A003BDF33 /* PostViewController.swift */; };
+		8090EA4B29A3CB24003BDF33 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8090EA4A29A3CB24003BDF33 /* HomeViewController.swift */; };
+		8090EA4D29A3CB2B003BDF33 /* ExploreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8090EA4C29A3CB2B003BDF33 /* ExploreViewController.swift */; };
+		8090EA4F29A3CB31003BDF33 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8090EA4E29A3CB31003BDF33 /* CameraViewController.swift */; };
+		8090EA5129A3CB3D003BDF33 /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8090EA5029A3CB3D003BDF33 /* NotificationsViewController.swift */; };
+		8090EA5329A3CB44003BDF33 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8090EA5229A3CB44003BDF33 /* ProfileViewController.swift */; };
+		8090EA5529A3CB7C003BDF33 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 8090EA5429A3CB7C003BDF33 /* README.md */; };
 		80F17ED729A3AF180061B6F4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F17ED629A3AF180061B6F4 /* AppDelegate.swift */; };
 		80F17ED929A3AF180061B6F4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F17ED829A3AF180061B6F4 /* SceneDelegate.swift */; };
-		80F17EDB29A3AF180061B6F4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F17EDA29A3AF180061B6F4 /* ViewController.swift */; };
 		80F17EE029A3AF190061B6F4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80F17EDF29A3AF190061B6F4 /* Assets.xcassets */; };
 		80F17EE329A3AF190061B6F4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80F17EE129A3AF190061B6F4 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		803D9D3829A3CC1C00211763 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		8090EA2629A3C745003BDF33 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		8090EA3629A3CA6F003BDF33 /* APICaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICaller.swift; sourceTree = "<group>"; };
+		8090EA3829A3CA7C003BDF33 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
+		8090EA3A29A3CA86003BDF33 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
+		8090EA3C29A3CA8F003BDF33 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
+		8090EA3E29A3CAA7003BDF33 /* HapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticsManager.swift; sourceTree = "<group>"; };
+		8090EA4029A3CAD2003BDF33 /* UserListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListViewController.swift; sourceTree = "<group>"; };
+		8090EA4229A3CAE3003BDF33 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		8090EA4429A3CAEA003BDF33 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		8090EA4629A3CAF6003BDF33 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		8090EA4829A3CB0A003BDF33 /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
+		8090EA4A29A3CB24003BDF33 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		8090EA4C29A3CB2B003BDF33 /* ExploreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreViewController.swift; sourceTree = "<group>"; };
+		8090EA4E29A3CB31003BDF33 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		8090EA5029A3CB3D003BDF33 /* NotificationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
+		8090EA5229A3CB44003BDF33 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		8090EA5429A3CB7C003BDF33 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		80F17ED329A3AF180061B6F4 /* TikTok.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TikTok.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		80F17ED629A3AF180061B6F4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		80F17ED829A3AF180061B6F4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		80F17EDA29A3AF180061B6F4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		80F17EDF29A3AF190061B6F4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		80F17EE229A3AF190061B6F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		80F17EE429A3AF190061B6F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -29,15 +69,109 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8090EA3229A3C7E2003BDF33 /* FirebaseFirestoreSwift in Frameworks */,
+				8090EA2E29A3C7E2003BDF33 /* FirebaseDatabaseSwift in Frameworks */,
+				8090EA3029A3C7E2003BDF33 /* FirebaseFirestore in Frameworks */,
+				8090EA2C29A3C7E2003BDF33 /* FirebaseDatabase in Frameworks */,
+				8090EA2A29A3C7E2003BDF33 /* FirebaseAuth in Frameworks */,
+				8090EA3429A3C7E2003BDF33 /* FirebaseStorage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8090EA1E29A3C6A7003BDF33 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				80F17EDF29A3AF190061B6F4 /* Assets.xcassets */,
+				80F17EE129A3AF190061B6F4 /* LaunchScreen.storyboard */,
+				803D9D3829A3CC1C00211763 /* GoogleService-Info.plist */,
+				80F17EE429A3AF190061B6F4 /* Info.plist */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		8090EA1F29A3C6B6003BDF33 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				8090EA2629A3C745003BDF33 /* MainTabBarController.swift */,
+				8090EA2529A3C6EE003BDF33 /* Core */,
+				8090EA2429A3C6E3003BDF33 /* Others */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		8090EA2029A3C6BF003BDF33 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		8090EA2129A3C6C8003BDF33 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		8090EA2229A3C6CD003BDF33 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		8090EA2329A3C6D3003BDF33 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				80F17ED629A3AF180061B6F4 /* AppDelegate.swift */,
+				80F17ED829A3AF180061B6F4 /* SceneDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		8090EA2429A3C6E3003BDF33 /* Others */ = {
+			isa = PBXGroup;
+			children = (
+				8090EA4029A3CAD2003BDF33 /* UserListViewController.swift */,
+				8090EA4229A3CAE3003BDF33 /* SignInViewController.swift */,
+				8090EA4429A3CAEA003BDF33 /* SignUpViewController.swift */,
+				8090EA4629A3CAF6003BDF33 /* SettingsViewController.swift */,
+				8090EA4829A3CB0A003BDF33 /* PostViewController.swift */,
+			);
+			path = Others;
+			sourceTree = "<group>";
+		};
+		8090EA2529A3C6EE003BDF33 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				8090EA4A29A3CB24003BDF33 /* HomeViewController.swift */,
+				8090EA4C29A3CB2B003BDF33 /* ExploreViewController.swift */,
+				8090EA4E29A3CB31003BDF33 /* CameraViewController.swift */,
+				8090EA5029A3CB3D003BDF33 /* NotificationsViewController.swift */,
+				8090EA5229A3CB44003BDF33 /* ProfileViewController.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		8090EA3529A3CA5E003BDF33 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				8090EA3629A3CA6F003BDF33 /* APICaller.swift */,
+				8090EA3829A3CA7C003BDF33 /* StorageManager.swift */,
+				8090EA3A29A3CA86003BDF33 /* DatabaseManager.swift */,
+				8090EA3C29A3CA8F003BDF33 /* AuthManager.swift */,
+				8090EA3E29A3CAA7003BDF33 /* HapticsManager.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		80F17ECA29A3AF180061B6F4 = {
 			isa = PBXGroup;
 			children = (
+				8090EA5429A3CB7C003BDF33 /* README.md */,
 				80F17ED529A3AF180061B6F4 /* TikTok */,
 				80F17ED429A3AF180061B6F4 /* Products */,
 			);
@@ -54,12 +188,13 @@
 		80F17ED529A3AF180061B6F4 /* TikTok */ = {
 			isa = PBXGroup;
 			children = (
-				80F17ED629A3AF180061B6F4 /* AppDelegate.swift */,
-				80F17ED829A3AF180061B6F4 /* SceneDelegate.swift */,
-				80F17EDA29A3AF180061B6F4 /* ViewController.swift */,
-				80F17EDF29A3AF190061B6F4 /* Assets.xcassets */,
-				80F17EE129A3AF190061B6F4 /* LaunchScreen.storyboard */,
-				80F17EE429A3AF190061B6F4 /* Info.plist */,
+				8090EA2329A3C6D3003BDF33 /* Application */,
+				8090EA3529A3CA5E003BDF33 /* Services */,
+				8090EA2229A3C6CD003BDF33 /* Models */,
+				8090EA2129A3C6C8003BDF33 /* Views */,
+				8090EA2029A3C6BF003BDF33 /* ViewModels */,
+				8090EA1F29A3C6B6003BDF33 /* Controllers */,
+				8090EA1E29A3C6A7003BDF33 /* SupportingFiles */,
 			);
 			path = TikTok;
 			sourceTree = "<group>";
@@ -80,6 +215,14 @@
 			dependencies = (
 			);
 			name = TikTok;
+			packageProductDependencies = (
+				8090EA2929A3C7E2003BDF33 /* FirebaseAuth */,
+				8090EA2B29A3C7E2003BDF33 /* FirebaseDatabase */,
+				8090EA2D29A3C7E2003BDF33 /* FirebaseDatabaseSwift */,
+				8090EA2F29A3C7E2003BDF33 /* FirebaseFirestore */,
+				8090EA3129A3C7E2003BDF33 /* FirebaseFirestoreSwift */,
+				8090EA3329A3C7E2003BDF33 /* FirebaseStorage */,
+			);
 			productName = TikTok;
 			productReference = 80F17ED329A3AF180061B6F4 /* TikTok.app */;
 			productType = "com.apple.product-type.application";
@@ -108,6 +251,9 @@
 				Base,
 			);
 			mainGroup = 80F17ECA29A3AF180061B6F4;
+			packageReferences = (
+				8090EA2829A3C7E2003BDF33 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = 80F17ED429A3AF180061B6F4 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -122,6 +268,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8090EA5529A3CB7C003BDF33 /* README.md in Resources */,
+				803D9D3929A3CC1C00211763 /* GoogleService-Info.plist in Resources */,
 				80F17EE329A3AF190061B6F4 /* LaunchScreen.storyboard in Resources */,
 				80F17EE029A3AF190061B6F4 /* Assets.xcassets in Resources */,
 			);
@@ -134,9 +282,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				80F17EDB29A3AF180061B6F4 /* ViewController.swift in Sources */,
+				8090EA4529A3CAEA003BDF33 /* SignUpViewController.swift in Sources */,
 				80F17ED729A3AF180061B6F4 /* AppDelegate.swift in Sources */,
+				8090EA4D29A3CB2B003BDF33 /* ExploreViewController.swift in Sources */,
+				8090EA3D29A3CA8F003BDF33 /* AuthManager.swift in Sources */,
+				8090EA4929A3CB0A003BDF33 /* PostViewController.swift in Sources */,
 				80F17ED929A3AF180061B6F4 /* SceneDelegate.swift in Sources */,
+				8090EA5329A3CB44003BDF33 /* ProfileViewController.swift in Sources */,
+				8090EA4B29A3CB24003BDF33 /* HomeViewController.swift in Sources */,
+				8090EA3B29A3CA86003BDF33 /* DatabaseManager.swift in Sources */,
+				8090EA3929A3CA7C003BDF33 /* StorageManager.swift in Sources */,
+				8090EA5129A3CB3D003BDF33 /* NotificationsViewController.swift in Sources */,
+				8090EA4129A3CAD2003BDF33 /* UserListViewController.swift in Sources */,
+				8090EA2729A3C745003BDF33 /* MainTabBarController.swift in Sources */,
+				8090EA3F29A3CAA7003BDF33 /* HapticsManager.swift in Sources */,
+				8090EA4329A3CAE3003BDF33 /* SignInViewController.swift in Sources */,
+				8090EA4F29A3CB31003BDF33 /* CameraViewController.swift in Sources */,
+				8090EA3729A3CA6F003BDF33 /* APICaller.swift in Sources */,
+				8090EA4729A3CAF6003BDF33 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -277,7 +440,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = X6QCC36TXK;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = TikTok/Info.plist;
+				INFOPLIST_FILE = TikTok/SupportingFiles/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = TikTok;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -308,7 +471,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = X6QCC36TXK;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = TikTok/Info.plist;
+				INFOPLIST_FILE = TikTok/SupportingFiles/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = TikTok;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -352,6 +515,50 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		8090EA2829A3C7E2003BDF33 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		8090EA2929A3C7E2003BDF33 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8090EA2829A3C7E2003BDF33 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		8090EA2B29A3C7E2003BDF33 /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8090EA2829A3C7E2003BDF33 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
+		8090EA2D29A3C7E2003BDF33 /* FirebaseDatabaseSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8090EA2829A3C7E2003BDF33 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabaseSwift;
+		};
+		8090EA2F29A3C7E2003BDF33 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8090EA2829A3C7E2003BDF33 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		8090EA3129A3C7E2003BDF33 /* FirebaseFirestoreSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8090EA2829A3C7E2003BDF33 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestoreSwift;
+		};
+		8090EA3329A3C7E2003BDF33 /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8090EA2829A3C7E2003BDF33 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 80F17ECB29A3AF180061B6F4 /* Project object */;
 }
