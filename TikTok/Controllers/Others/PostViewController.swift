@@ -1,6 +1,13 @@
 import UIKit
 
+protocol PostViewControllerDelegate: AnyObject {
+    func postViewController(_ vc: PostViewController,
+                            didTapCommentButtonFor post: PostModel)
+}
+
 final class PostViewController: UIViewController {
+    
+    weak var delegate: PostViewControllerDelegate?
     
     var model: PostModel
     
@@ -9,7 +16,8 @@ final class PostViewController: UIViewController {
     private lazy var likeButton: UIButton = {
         let button = UIButton(type: .system)
         button.setBackgroundImage(UIImage(
-            systemName: model.isLikedByCurrentUser ? "heart.fill" : "heart"), for: .normal)
+            systemName: model.isLikedByCurrentUser ? "heart.fill" : "heart"),
+                                  for: .normal)
         button.tintColor = .white
         button.imageView?.contentMode = .scaleAspectFit
         return button
@@ -178,7 +186,7 @@ final class PostViewController: UIViewController {
     }
     
     @objc private func commentButtonDidTap() {
-        
+        delegate?.postViewController(self, didTapCommentButtonFor: model)
     }
     
     @objc private func shareButtonDidTap() {
