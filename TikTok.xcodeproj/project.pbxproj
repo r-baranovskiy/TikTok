@@ -12,6 +12,7 @@
 		80223D9729A401E200245149 /* UIView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80223D9629A401E200245149 /* UIView + Extension.swift */; };
 		8022D8E229A9781C00B0ECCB /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8022D8E129A9781C00B0ECCB /* CommentTableViewCell.swift */; };
 		8022D8E429A97A7F00B0ECCB /* Date + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8022D8E329A97A7F00B0ECCB /* Date + Extension.swift */; };
+		8022D8E629A98B7400B0ECCB /* test-video.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 8022D8E529A98B7400B0ECCB /* test-video.mp4 */; };
 		8078641C29A7F83500A6B3E3 /* CommentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8078641B29A7F83500A6B3E3 /* CommentsViewController.swift */; };
 		8078641E29A8454F00A6B3E3 /* PostComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8078641D29A8454F00A6B3E3 /* PostComment.swift */; };
 		8078642029A8458C00A6B3E3 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8078641F29A8458C00A6B3E3 /* User.swift */; };
@@ -49,6 +50,7 @@
 		80223D9629A401E200245149 /* UIView + Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView + Extension.swift"; sourceTree = "<group>"; };
 		8022D8E129A9781C00B0ECCB /* CommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
 		8022D8E329A97A7F00B0ECCB /* Date + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date + Extension.swift"; sourceTree = "<group>"; };
+		8022D8E529A98B7400B0ECCB /* test-video.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "test-video.mp4"; sourceTree = "<group>"; };
 		8078641B29A7F83500A6B3E3 /* CommentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsViewController.swift; sourceTree = "<group>"; };
 		8078641D29A8454F00A6B3E3 /* PostComment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PostComment.swift; path = TikTok/Controllers/Others/PostComment.swift; sourceTree = SOURCE_ROOT; };
 		8078641F29A8458C00A6B3E3 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = User.swift; path = TikTok/Controllers/Others/User.swift; sourceTree = SOURCE_ROOT; };
@@ -130,6 +132,7 @@
 		8090EA1E29A3C6A7003BDF33 /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
+				8022D8E529A98B7400B0ECCB /* test-video.mp4 */,
 				80921DFE29A407B900A8D8C0 /* GoogleService-Info.plist */,
 				80F17EDF29A3AF190061B6F4 /* Assets.xcassets */,
 				80F17EE129A3AF190061B6F4 /* LaunchScreen.storyboard */,
@@ -323,6 +326,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8090EA5529A3CB7C003BDF33 /* README.md in Resources */,
+				8022D8E629A98B7400B0ECCB /* test-video.mp4 in Resources */,
 				80921DFF29A407B900A8D8C0 /* GoogleService-Info.plist in Resources */,
 				80F17EE329A3AF190061B6F4 /* LaunchScreen.storyboard in Resources */,
 				80F17EE029A3AF190061B6F4 /* Assets.xcassets in Resources */,
