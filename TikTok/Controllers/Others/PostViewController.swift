@@ -1,4 +1,5 @@
 import UIKit
+import AVFoundation
 
 protocol PostViewControllerDelegate: AnyObject {
     func postViewController(_ vc: PostViewController,
@@ -11,6 +12,8 @@ final class PostViewController: UIViewController {
     weak var delegate: PostViewControllerDelegate?
     
     var model: PostModel
+    
+    var player: AVPlayer?
     
     // MARK: - UI Constants
     
@@ -77,6 +80,7 @@ final class PostViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureVideo()
         configurePostView()
         setUpDoubleTapToLike()
         addTargets()
@@ -104,8 +108,10 @@ final class PostViewController: UIViewController {
     
     private func setUpSizeForButtons() {
         let size: CGFloat = 40
+        let tabBarHeight: CGFloat = tabBarController?.tabBar.height ?? 0
+        
         let yStart: CGFloat = view.height - (size * 4) - 30 -
-        view.safeAreaInsets.bottom - (tabBarController?.tabBar.height ?? 0)
+        view.safeAreaInsets.bottom - tabBarHeight
         
         for (index, button) in [likeButton, commentButton, shareButton]
             .enumerated() {
@@ -161,6 +167,29 @@ final class PostViewController: UIViewController {
     }
     
     // MARK: - Behaviour
+    
+    private func configureVideo() {
+        guard let path = Bundle.main.path(
+            forResource: "test-video", ofType: "mp4") else {
+            return
+        }
+        
+        var url: URL
+        if #available(iOS 16.0, *) {
+            url = URL.init(filePath: path)
+        } else {
+            url = URL(fileURLWithPath: path)
+        }
+        
+        player = AVPlayer(url: url)
+        
+        let playerLayer = AVPlayerLayer(player: player)
+        playerLayer.frame = view.bounds
+        playerLayer.videoGravity = .resizeAspectFill
+        view.layer.addSublayer(playerLayer)
+        player?.volume = 1.0
+        player?.play()
+    }
     
     private func setUpDoubleTapToLike() {
         let tap = UITapGestureRecognizer(
