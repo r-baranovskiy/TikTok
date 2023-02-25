@@ -42,6 +42,17 @@ final class CommentTableViewCell: UITableViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
+        setUpSizes()
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        avatarImageView.image = nil
+        commentLabel.text = nil
+        dateLabel.text = nil
+    }
+    
+    private func setUpSizes() {
         commentLabel.sizeToFit()
         dateLabel.sizeToFit()
         
@@ -62,13 +73,6 @@ final class CommentTableViewCell: UITableViewCell {
             x: avatarImageView.right + 10,
             y: commentLabel.bottom,
             width: dateLabel.width, height: dateLabel.height)
-    }
-    
-    override func prepareForReuse() {
-        super.prepareForReuse()
-        avatarImageView.image = nil
-        commentLabel.text = nil
-        dateLabel.text = nil
     }
     
     public func configure(with model: PostComment) {

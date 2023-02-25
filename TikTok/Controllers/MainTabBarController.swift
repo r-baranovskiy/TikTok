@@ -18,7 +18,10 @@ final class MainTabBarController: UITabBarController {
         let notificationsNavVC = createNavigationVC(
             rootVC: NotificationsViewController(), imageSystemName: "bell")
         let profileNavVC = createNavigationVC(
-            rootVC: ProfileViewController(), imageSystemName: "person.circle")
+            rootVC: ProfileViewController(
+                user: User(username: "kek", profilePictureURL: nil,
+                           identifier: UUID().uuidString)),
+            imageSystemName: "person.circle")
         
         cameraVC.tabBarItem = UITabBarItem(
             title: nil, image: UIImage(
