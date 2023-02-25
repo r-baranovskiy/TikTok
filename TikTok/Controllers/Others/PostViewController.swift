@@ -3,6 +3,7 @@ import UIKit
 protocol PostViewControllerDelegate: AnyObject {
     func postViewController(_ vc: PostViewController,
                             didTapCommentButtonFor post: PostModel)
+    func postViewController(_ vc: PostViewController, didTapProfileButton post: PostModel )
 }
 
 final class PostViewController: UIViewController {
@@ -38,6 +39,16 @@ final class PostViewController: UIViewController {
             UIImage(systemName: "square.and.arrow.up"), for: .normal)
         button.tintColor = .white
         button.imageView?.contentMode = .scaleAspectFit
+        return button
+    }()
+    
+    private let profileButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setBackgroundImage(
+            UIImage(named: "testImageOne"), for: .normal)
+        button.layer.masksToBounds = true
+        button.tintColor = .white
+        button.imageView?.contentMode = .scaleAspectFill
         return button
     }()
     
@@ -88,6 +99,7 @@ final class PostViewController: UIViewController {
         view.addSubview(likeButton)
         view.addSubview(commentButton)
         view.addSubview(shareButton)
+        view.addSubview(profileButton)
     }
     
     private func setUpSizeForButtons() {
@@ -102,6 +114,11 @@ final class PostViewController: UIViewController {
                 (CGFloat(index) * size),
                 width: size, height: size)
         }
+        
+        profileButton.frame = CGRect(x: likeButton.left,
+                                     y: likeButton.top - 10 - size,
+                                     width: size, height: size)
+        profileButton.layer.cornerRadius = size / 2
     }
     
     private func setUpSizeForLabel() {
@@ -154,6 +171,8 @@ final class PostViewController: UIViewController {
     }
     
     private func addTargets() {
+        profileButton.addTarget(
+            self, action: #selector(profileButtonDidTap), for: .touchUpInside)
         likeButton.addTarget(
             self, action: #selector(likeButtonDidTap), for: .touchUpInside)
         commentButton.addTarget(
@@ -176,6 +195,10 @@ final class PostViewController: UIViewController {
     }
     
     // MARK: - @objc buttons func
+    
+    @objc private func profileButtonDidTap() {
+        delegate?.postViewController(self, didTapProfileButton: model)
+    }
     
     @objc private func didDoubleTap() {
         addLike()
