@@ -11,6 +11,8 @@ final class PostViewController: UIViewController {
     
     weak var delegate: PostViewControllerDelegate?
     
+    private var playerDidFinishObserver: NSObjectProtocol?
+    
     var model: PostModel
     
     var player: AVPlayer?
@@ -92,6 +94,106 @@ final class PostViewController: UIViewController {
         setUpSizeForLabel()
     }
     
+    // MARK: - Behaviour
+    
+    private func configureVideo() {
+        guard let path = Bundle.main.path(
+            forResource: "test-video", ofType: "mp4") else {
+            return
+        }
+        
+        var url: URL
+        if #available(iOS 16.0, *) {
+            url = URL.init(filePath: path)
+        } else {
+            url = URL(fileURLWithPath: path)
+        }
+        
+        player = AVPlayer(url: url)
+        
+        let playerLayer = AVPlayerLayer(player: player)
+        playerLayer.frame = view.bounds
+        playerLayer.videoGravity = .resizeAspectFill
+        view.layer.addSublayer(playerLayer)
+        player?.volume = 1.0
+        player?.play()
+        
+        createPlayerNotification()
+    }
+    
+    private func createPlayerNotification() {
+        guard let player = player else { return }
+        
+        playerDidFinishObserver = NotificationCenter.default.addObserver(
+            forName: .AVPlayerItemDidPlayToEndTime, object: player.currentItem,
+            queue: .main, using: { _ in
+                player.seek(to: .zero)
+                player.play()
+            })
+    }
+    
+    private func setUpDoubleTapToLike() {
+        let tap = UITapGestureRecognizer(
+            target: self, action: #selector(didDoubleTap))
+        tap.numberOfTapsRequired = 2
+        view.addGestureRecognizer(tap)
+        view.isUserInteractionEnabled = true
+    }
+    
+    private func addTargets() {
+        profileButton.addTarget(
+            self, action: #selector(profileButtonDidTap), for: .touchUpInside)
+        likeButton.addTarget(
+            self, action: #selector(likeButtonDidTap), for: .touchUpInside)
+        commentButton.addTarget(
+            self, action: #selector(commentButtonDidTap), for: .touchUpInside)
+        shareButton.addTarget(
+            self, action: #selector(shareButtonDidTap), for: .touchUpInside)
+    }
+    
+    private func addLike() {
+        showLikeAnimation()
+        likeButton.setBackgroundImage(UIImage(
+            systemName: model.isLikedByCurrentUser ? "heart" : "heart.fill"),
+                                      for: .normal)
+        showLikeAnimation()
+        if !model.isLikedByCurrentUser {
+            model.isLikedByCurrentUser = true
+        } else {
+            model.isLikedByCurrentUser = false
+        }
+    }
+    
+    // MARK: - @objc buttons func
+    
+    @objc private func profileButtonDidTap() {
+        delegate?.postViewController(self, didTapProfileButton: model)
+    }
+    
+    @objc private func didDoubleTap() {
+        addLike()
+    }
+    
+    @objc private func likeButtonDidTap() {
+        addLike()
+    }
+    
+    @objc private func commentButtonDidTap() {
+        delegate?.postViewController(self, didTapCommentButtonFor: model)
+    }
+    
+    @objc private func shareButtonDidTap() {
+        guard let url = URL(string: "https://www.tiktok.com") else {
+            return
+        }
+        
+        let activityVC = UIActivityViewController(
+            activityItems: [url],
+            applicationActivities: [])
+        
+        present(activityVC, animated: true)
+    }
+    
     // MARK: - Appearance
     
     private func configurePostView() {
@@ -164,92 +266,5 @@ final class PostViewController: UIViewController {
                 }
             }
         }
-    }
-    
-    // MARK: - Behaviour
-    
-    private func configureVideo() {
-        guard let path = Bundle.main.path(
-            forResource: "test-video", ofType: "mp4") else {
-            return
-        }
-        
-        var url: URL
-        if #available(iOS 16.0, *) {
-            url = URL.init(filePath: path)
-        } else {
-            url = URL(fileURLWithPath: path)
-        }
-        
-        player = AVPlayer(url: url)
-        
-        let playerLayer = AVPlayerLayer(player: player)
-        playerLayer.frame = view.bounds
-        playerLayer.videoGravity = .resizeAspectFill
-        view.layer.addSublayer(playerLayer)
-        player?.volume = 1.0
-        player?.play()
-    }
-    
-    private func setUpDoubleTapToLike() {
-        let tap = UITapGestureRecognizer(
-            target: self, action: #selector(didDoubleTap))
-        tap.numberOfTapsRequired = 2
-        view.addGestureRecognizer(tap)
-        view.isUserInteractionEnabled = true
-    }
-    
-    private func addTargets() {
-        profileButton.addTarget(
-            self, action: #selector(profileButtonDidTap), for: .touchUpInside)
-        likeButton.addTarget(
-            self, action: #selector(likeButtonDidTap), for: .touchUpInside)
-        commentButton.addTarget(
-            self, action: #selector(commentButtonDidTap), for: .touchUpInside)
-        shareButton.addTarget(
-            self, action: #selector(shareButtonDidTap), for: .touchUpInside)
-    }
-    
-    private func addLike() {
-        showLikeAnimation()
-        likeButton.setBackgroundImage(UIImage(
-            systemName: model.isLikedByCurrentUser ? "heart" : "heart.fill"),
-                                      for: .normal)
-        showLikeAnimation()
-        if !model.isLikedByCurrentUser {
-            model.isLikedByCurrentUser = true
-        } else {
-            model.isLikedByCurrentUser = false
-        }
-    }
-    
-    // MARK: - @objc buttons func
-    
-    @objc private func profileButtonDidTap() {
-        delegate?.postViewController(self, didTapProfileButton: model)
-    }
-    
-    @objc private func didDoubleTap() {
-        addLike()
-    }
-    
-    @objc private func likeButtonDidTap() {
-        addLike()
-    }
-    
-    @objc private func commentButtonDidTap() {
-        delegate?.postViewController(self, didTapCommentButtonFor: model)
-    }
-    
-    @objc private func shareButtonDidTap() {
-        guard let url = URL(string: "https://www.tiktok.com") else {
-            return
-        }
-        
-        let activityVC = UIActivityViewController(
-            activityItems: [url],
-            applicationActivities: [])
-        
-        present(activityVC, animated: true)
     }
 }
