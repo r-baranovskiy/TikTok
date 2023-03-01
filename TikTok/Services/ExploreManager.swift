@@ -18,21 +18,6 @@ final class ExploreManager {
         })
     }
     
-    public func getExploreCreators() -> [ExploreUserViewModel] {
-        guard let exploreData = parseExploreData() else {
-            return []
-        }
-        
-        return exploreData.creators.compactMap({
-            ExploreUserViewModel(
-                profilePicture: UIImage(named: $0.image),
-                username: $0.username,
-                followerCount: $0.followers_count) {
-                    // empty
-                }
-        })
-    }
-    
     private func parseExploreData() -> ExploreResponse? {
         guard let path = Bundle.main.path(forResource: "explore",
                                           ofType: "json") else {
