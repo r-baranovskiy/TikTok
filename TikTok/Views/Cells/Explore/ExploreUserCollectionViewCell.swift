@@ -18,7 +18,7 @@ final class ExploreUserCollectionViewCell: UICollectionViewCell {
         label.font = .systemFont(ofSize: 18, weight: .light)
         return label
     }()
-
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setUpContentView()
@@ -55,8 +55,7 @@ final class ExploreUserCollectionViewCell: UICollectionViewCell {
     }
     
     func configure(with viewModel: ExploreUserViewModel) {
-        profileImageView.tintColor = .black
-        profileImageView.image = UIImage(systemName: "person.circle")
+        profileImageView.image = viewModel.profilePicture
         usernameLabel.text = viewModel.username
     }
 }
