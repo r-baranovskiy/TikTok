@@ -2,6 +2,8 @@ import UIKit
 
 final class ExploreViewController: UIViewController {
     
+    // MARK: - UI Constants
+    
     private let searchBar: UISearchBar = {
         let bar = UISearchBar()
         bar.placeholder = "Search..."
@@ -14,8 +16,11 @@ final class ExploreViewController: UIViewController {
     
     private var collectionView: UICollectionView?
     
+    // MARK: - Lifeycles
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        ExploreManager.shared.delegate = self
         setUpSearchBar()
         configureModels()
         setUpCollectionView()
@@ -28,6 +33,7 @@ final class ExploreViewController: UIViewController {
     
     private func setUpSearchBar() {
         navigationItem.titleView = searchBar
+        navigationController?.navigationBar.tintColor = .label
         searchBar.delegate = self
     }
     
@@ -117,10 +123,36 @@ final class ExploreViewController: UIViewController {
     }
 }
 
+extension ExploreViewController: ExploreManagerDelegate {
+    func hashtagDidTap(_ hashtag: String) {
+        searchBar.text = hashtag
+        searchBar.becomeFirstResponder()
+    }
+    
+    func pushViewController(_ vc: UIViewController) {
+        navigationController?.pushViewController(vc, animated: true)
+    }
+}
+
 // MARK: - UISearchBarDelegate
 
 extension ExploreViewController: UISearchBarDelegate {
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        navigationItem.rightBarButtonItem = UIBarButtonItem(
+            title: "Cancel", style: .done,
+            target: self, action: #selector(cancelButtonDidTap))
+    }
     
+    @objc private func cancelButtonDidTap() {
+        searchBar.text = nil
+        navigationItem.rightBarButtonItem = nil
+        searchBar.resignFirstResponder()
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        navigationItem.rightBarButtonItem = nil
+        searchBar.resignFirstResponder()
+    }
 }
 
 // MARK: - UICollectionViewDelegate, UICollectionViewDataSource
@@ -134,13 +166,13 @@ extension ExploreViewController: UICollectionViewDelegate, UICollectionViewDataS
         
         switch model {
         case .banner(viewModel: let viewModel):
-            break
+            viewModel.handler()
         case .post(viewModel: let viewModel):
-            break
+            viewModel.handler()
         case .hashtag(viewModel: let viewModel):
-            break
+            viewModel.handler()
         case .user(viewModel: let viewModel):
-            break
+            viewModel.handler()
         }
     }
     

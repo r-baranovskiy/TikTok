@@ -18,7 +18,7 @@ final class ExploreUserCollectionViewCell: UICollectionViewCell {
         label.font = .systemFont(ofSize: 18, weight: .light)
         return label
     }()
-
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setUpContentView()
