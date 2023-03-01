@@ -368,13 +368,13 @@ extension ExploreViewController {
             let verticalGroup = NSCollectionLayoutGroup.vertical(
                 layoutSize: NSCollectionLayoutSize(
                     widthDimension: .absolute(100),
-                    heightDimension: .absolute(240)),
+                    heightDimension: .absolute(300)),
                 subitem: item, count: 2)
             
             let group = NSCollectionLayoutGroup.horizontal(
                 layoutSize: NSCollectionLayoutSize(
                     widthDimension: .absolute(110),
-                    heightDimension: .absolute(240)),
+                    heightDimension: .absolute(300)),
                 subitems: [verticalGroup])
             
             let section = NSCollectionLayoutSection(group: group)

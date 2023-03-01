@@ -23,7 +23,7 @@ final class ExploreBannerCollectionViewCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        contentView.clipsToBounds = true
+        setUpContentView()
     }
     
     required init?(coder: NSCoder) {
@@ -32,6 +32,7 @@ final class ExploreBannerCollectionViewCell: UICollectionViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
+        setUpContentView()
         bannerLabel.sizeToFit()
         bannerImageView.frame = contentView.bounds
         bannerLabel.frame = CGRect(
@@ -47,6 +48,7 @@ final class ExploreBannerCollectionViewCell: UICollectionViewCell {
     }
     
     private func setUpContentView() {
+        contentView.clipsToBounds = true
         contentView.addSubview(bannerImageView)
         contentView.addSubview(bannerLabel)
         contentView.layer.cornerRadius = 8
