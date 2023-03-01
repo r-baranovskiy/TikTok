@@ -48,6 +48,10 @@
 		80921DFF29A407B900A8D8C0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 80921DFE29A407B900A8D8C0 /* GoogleService-Info.plist */; };
 		80A1514D29AEC66100B8B745 /* ExploreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A1514C29AEC66100B8B745 /* ExploreManager.swift */; };
 		80A1515029AED27C00B8B745 /* explore.json in Resources */ = {isa = PBXBuildFile; fileRef = 80A1514F29AED27C00B8B745 /* explore.json */; };
+		80A1515429AEE04C00B8B745 /* ExploreBannerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A1515329AEE04C00B8B745 /* ExploreBannerCollectionViewCell.swift */; };
+		80A1515629AEE05F00B8B745 /* ExplorePostCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A1515529AEE05F00B8B745 /* ExplorePostCollectionViewCell.swift */; };
+		80A1515829AEE07800B8B745 /* ExploreUserCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A1515729AEE07800B8B745 /* ExploreUserCollectionViewCell.swift */; };
+		80A1515A29AEE09200B8B745 /* ExploreHashtagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A1515929AEE09200B8B745 /* ExploreHashtagCollectionViewCell.swift */; };
 		80F17ED729A3AF180061B6F4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F17ED629A3AF180061B6F4 /* AppDelegate.swift */; };
 		80F17ED929A3AF180061B6F4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F17ED829A3AF180061B6F4 /* SceneDelegate.swift */; };
 		80F17EE029A3AF190061B6F4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80F17EDF29A3AF190061B6F4 /* Assets.xcassets */; };
@@ -89,6 +93,10 @@
 		80921DFE29A407B900A8D8C0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		80A1514C29AEC66100B8B745 /* ExploreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreManager.swift; sourceTree = "<group>"; };
 		80A1514F29AED27C00B8B745 /* explore.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = explore.json; sourceTree = "<group>"; };
+		80A1515329AEE04C00B8B745 /* ExploreBannerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreBannerCollectionViewCell.swift; sourceTree = "<group>"; };
+		80A1515529AEE05F00B8B745 /* ExplorePostCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplorePostCollectionViewCell.swift; sourceTree = "<group>"; };
+		80A1515729AEE07800B8B745 /* ExploreUserCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreUserCollectionViewCell.swift; sourceTree = "<group>"; };
+		80A1515929AEE09200B8B745 /* ExploreHashtagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreHashtagCollectionViewCell.swift; sourceTree = "<group>"; };
 		80F17ED329A3AF180061B6F4 /* TikTok.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TikTok.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		80F17ED629A3AF180061B6F4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		80F17ED829A3AF180061B6F4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -136,6 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				8022D8E129A9781C00B0ECCB /* CommentTableViewCell.swift */,
+				80A1515B29AEE09700B8B745 /* Explore */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -246,6 +255,17 @@
 				80A1514C29AEC66100B8B745 /* ExploreManager.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		80A1515B29AEE09700B8B745 /* Explore */ = {
+			isa = PBXGroup;
+			children = (
+				80A1515329AEE04C00B8B745 /* ExploreBannerCollectionViewCell.swift */,
+				80A1515529AEE05F00B8B745 /* ExplorePostCollectionViewCell.swift */,
+				80A1515729AEE07800B8B745 /* ExploreUserCollectionViewCell.swift */,
+				80A1515929AEE09200B8B745 /* ExploreHashtagCollectionViewCell.swift */,
+			);
+			path = Explore;
 			sourceTree = "<group>";
 		};
 		80F17ECA29A3AF180061B6F4 = {
@@ -386,6 +406,7 @@
 				8090EA3B29A3CA86003BDF33 /* DatabaseManager.swift in Sources */,
 				8090EA3929A3CA7C003BDF33 /* StorageManager.swift in Sources */,
 				8090EA5129A3CB3D003BDF33 /* NotificationsViewController.swift in Sources */,
+				80A1515629AEE05F00B8B745 /* ExplorePostCollectionViewCell.swift in Sources */,
 				800AF2DD29AD7B1500759A44 /* ExploreBannerViewModel.swift in Sources */,
 				8090EA4129A3CAD2003BDF33 /* UserListViewController.swift in Sources */,
 				8022D8ED29A992E600B0ECCB /* PostComment.swift in Sources */,
@@ -394,12 +415,15 @@
 				8090EA2729A3C745003BDF33 /* MainTabBarController.swift in Sources */,
 				8090EA3F29A3CAA7003BDF33 /* HapticsManager.swift in Sources */,
 				800AF2DB29AD778000759A44 /* ExploreSectionType.swift in Sources */,
+				80A1515A29AEE09200B8B745 /* ExploreHashtagCollectionViewCell.swift in Sources */,
 				8090EA4329A3CAE3003BDF33 /* SignInViewController.swift in Sources */,
 				8090EA4F29A3CB31003BDF33 /* CameraViewController.swift in Sources */,
 				800AF2D729AD770700759A44 /* ExploreSection.swift in Sources */,
 				80223D9729A401E200245149 /* UIView + Extension.swift in Sources */,
 				8090EA4729A3CAF6003BDF33 /* SettingsViewController.swift in Sources */,
+				80A1515829AEE07800B8B745 /* ExploreUserCollectionViewCell.swift in Sources */,
 				8022D8EE29A992E600B0ECCB /* User.swift in Sources */,
+				80A1515429AEE04C00B8B745 /* ExploreBannerCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
