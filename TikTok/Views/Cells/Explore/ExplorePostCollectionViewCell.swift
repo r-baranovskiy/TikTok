@@ -49,7 +49,6 @@ final class ExplorePostCollectionViewCell: UICollectionViewCell {
         contentView.addSubview(captionLabel)
         contentView.layer.cornerRadius = 8
         contentView.layer.masksToBounds = true
-        
     }
     
     func configure(with viewModel: ExplorePostViewModel) {

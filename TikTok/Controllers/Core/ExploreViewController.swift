@@ -60,14 +60,20 @@ final class ExploreViewController: UIViewController {
             )
         )
         
-        //        sections.append(
-        //            ExploreSection(
-        //                type: .users,
-        //                cells: ExploreManager.shared.getExploreCreators().compactMap({
-        //                    return ExploreCell.user(viewModel: $0)
-        //                })
-        //            )
-        //        )
+                sections.append(
+                    ExploreSection(
+                        type: .users,
+                        cells: [
+                            .user(viewModel: ExploreUserViewModel(
+                                profilePicture: nil,
+                                username: "",
+                                followerCount: 10,
+                                handler: {
+                                    //
+                                }))
+                        ]
+                    )
+                )
         
         sections.append(
             ExploreSection(
@@ -316,13 +322,13 @@ extension ExploreViewController {
                 top: 4, leading: 4, bottom: 4, trailing: 4)
             
             let groupSize = NSCollectionLayoutSize(
-                widthDimension: .absolute(200),
+                widthDimension: .absolute(150),
                 heightDimension: .absolute(200))
             let group = NSCollectionLayoutGroup.horizontal(
                 layoutSize: groupSize, subitems: [item])
             
             let section = NSCollectionLayoutSection(group: group)
-            section.orthogonalScrollingBehavior = .groupPaging
+            section.orthogonalScrollingBehavior = .continuous
             return section
         case .trendingHashtags:
             let item = NSCollectionLayoutItem(
