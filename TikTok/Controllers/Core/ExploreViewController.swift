@@ -33,25 +33,15 @@ final class ExploreViewController: UIViewController {
     }
     
     private func configureModels() {
-        var cells = [ExploreCell]()
-        for _ in 0...100 {
-            let cell = ExploreCell.banner(
-                viewModel: ExploreBannerViewModel(
-                    image: nil,
-                    title: "Foo",
-                    handler: {
-                        
-                    }
-                )
-            )
-            cells.append(cell)
-        }
         sections.append(
             ExploreSection(
                 type: .banners,
-                cells: cells
+                cells: ExploreManager.shared.getExploreBanners().compactMap({
+                    return ExploreCell.banner(viewModel: $0)
+                })
             )
         )
+        
         
         var posts = [ExploreCell]()
         for _ in 0...40 {
@@ -73,38 +63,9 @@ final class ExploreViewController: UIViewController {
         sections.append(
             ExploreSection(
                 type: .users,
-                cells: [
-                    .user(viewModel: ExploreUserViewModel(
-                        profilePictureURL: nil,
-                        username: "",
-                        followerCount: 0, handler: {
-                            
-                        })),
-                    .user(viewModel: ExploreUserViewModel(
-                        profilePictureURL: nil,
-                        username: "",
-                        followerCount: 0, handler: {
-                            
-                        })),
-                    .user(viewModel: ExploreUserViewModel(
-                        profilePictureURL: nil,
-                        username: "",
-                        followerCount: 0, handler: {
-                            
-                        })),
-                    .user(viewModel: ExploreUserViewModel(
-                        profilePictureURL: nil,
-                        username: "",
-                        followerCount: 0, handler: {
-                            
-                        })),
-                    .user(viewModel: ExploreUserViewModel(
-                        profilePictureURL: nil,
-                        username: "",
-                        followerCount: 0, handler: {
-                            
-                        }))
-                ]
+                cells: ExploreManager.shared.getExploreCreators().compactMap({
+                    return ExploreCell.user(viewModel: $0)
+                })
             )
         )
         
@@ -366,9 +327,13 @@ extension ExploreViewController: UICollectionViewDelegate, UICollectionViewDataS
         let model = sections[indexPath.section].cells[indexPath.row]
         
         switch model {
-            
         case .banner(let viewModel):
-            break
+            let cell = collectionView.dequeueReusableCell(
+                withReuseIdentifier: "cell", for: indexPath)
+            print(viewModel.image)
+            
+            cell.backgroundColor = .blue
+            return cell
         case .post(let viewModel):
             break
         case .hashtag(let viewModel):

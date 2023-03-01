@@ -46,6 +46,9 @@
 		8090EA5329A3CB44003BDF33 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8090EA5229A3CB44003BDF33 /* ProfileViewController.swift */; };
 		8090EA5529A3CB7C003BDF33 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 8090EA5429A3CB7C003BDF33 /* README.md */; };
 		80921DFF29A407B900A8D8C0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 80921DFE29A407B900A8D8C0 /* GoogleService-Info.plist */; };
+		80A1514D29AEC66100B8B745 /* ExploreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A1514C29AEC66100B8B745 /* ExploreManager.swift */; };
+		80A1515029AED27C00B8B745 /* explore.json in Resources */ = {isa = PBXBuildFile; fileRef = 80A1514F29AED27C00B8B745 /* explore.json */; };
+		80A1515229AEDC3200B8B745 /* ExploreUserCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A1515129AEDC3200B8B745 /* ExploreUserCollectionViewCell.swift */; };
 		80F17ED729A3AF180061B6F4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F17ED629A3AF180061B6F4 /* AppDelegate.swift */; };
 		80F17ED929A3AF180061B6F4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F17ED829A3AF180061B6F4 /* SceneDelegate.swift */; };
 		80F17EE029A3AF190061B6F4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80F17EDF29A3AF190061B6F4 /* Assets.xcassets */; };
@@ -85,6 +88,9 @@
 		8090EA5229A3CB44003BDF33 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		8090EA5429A3CB7C003BDF33 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		80921DFE29A407B900A8D8C0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		80A1514C29AEC66100B8B745 /* ExploreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreManager.swift; sourceTree = "<group>"; };
+		80A1514F29AED27C00B8B745 /* explore.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = explore.json; sourceTree = "<group>"; };
+		80A1515129AEDC3200B8B745 /* ExploreUserCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreUserCollectionViewCell.swift; sourceTree = "<group>"; };
 		80F17ED329A3AF180061B6F4 /* TikTok.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TikTok.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		80F17ED629A3AF180061B6F4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		80F17ED829A3AF180061B6F4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -132,6 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				8022D8E129A9781C00B0ECCB /* CommentTableViewCell.swift */,
+				80A1515129AEDC3200B8B745 /* ExploreUserCollectionViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -159,6 +166,7 @@
 		8090EA1E29A3C6A7003BDF33 /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
+				80A1514F29AED27C00B8B745 /* explore.json */,
 				8022D8E529A98B7400B0ECCB /* test-video.mp4 */,
 				80921DFE29A407B900A8D8C0 /* GoogleService-Info.plist */,
 				80F17EDF29A3AF190061B6F4 /* Assets.xcassets */,
@@ -238,6 +246,7 @@
 				8090EA3A29A3CA86003BDF33 /* DatabaseManager.swift */,
 				8090EA3C29A3CA8F003BDF33 /* AuthManager.swift */,
 				8090EA3E29A3CAA7003BDF33 /* HapticsManager.swift */,
+				80A1514C29AEC66100B8B745 /* ExploreManager.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -347,6 +356,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8090EA5529A3CB7C003BDF33 /* README.md in Resources */,
+				80A1515029AED27C00B8B745 /* explore.json in Resources */,
 				8022D8E629A98B7400B0ECCB /* test-video.mp4 in Resources */,
 				80921DFF29A407B900A8D8C0 /* GoogleService-Info.plist in Resources */,
 				80F17EE329A3AF190061B6F4 /* LaunchScreen.storyboard in Resources */,
@@ -366,10 +376,12 @@
 				8022D8E429A97A7F00B0ECCB /* Date + Extension.swift in Sources */,
 				800AF2D929AD773D00759A44 /* ExploreCell.swift in Sources */,
 				80F17ED729A3AF180061B6F4 /* AppDelegate.swift in Sources */,
+				80A1515229AEDC3200B8B745 /* ExploreUserCollectionViewCell.swift in Sources */,
 				8022D8E229A9781C00B0ECCB /* CommentTableViewCell.swift in Sources */,
 				8090EA4D29A3CB2B003BDF33 /* ExploreViewController.swift in Sources */,
 				800AF2DF29AD7B2900759A44 /* ExploreHashtagViewModel.swift in Sources */,
 				8090EA3D29A3CA8F003BDF33 /* AuthManager.swift in Sources */,
+				80A1514D29AEC66100B8B745 /* ExploreManager.swift in Sources */,
 				8090EA4929A3CB0A003BDF33 /* PostViewController.swift in Sources */,
 				80F17ED929A3AF180061B6F4 /* SceneDelegate.swift in Sources */,
 				8090EA5329A3CB44003BDF33 /* ProfileViewController.swift in Sources */,
