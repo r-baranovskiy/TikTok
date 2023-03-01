@@ -15,6 +15,7 @@ final class ExploreBannerCollectionViewCell: UICollectionViewCell {
     private let bannerLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 1
+        label.textColor = .systemBackground
         label.font = .systemFont(ofSize: 24, weight: .semibold)
         return label
     }()

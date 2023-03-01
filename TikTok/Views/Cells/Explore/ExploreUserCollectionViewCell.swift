@@ -55,8 +55,7 @@ final class ExploreUserCollectionViewCell: UICollectionViewCell {
     }
     
     func configure(with viewModel: ExploreUserViewModel) {
-        profileImageView.tintColor = .black
-        profileImageView.image = UIImage(systemName: "person.circle")
+        profileImageView.image = viewModel.profilePicture
         usernameLabel.text = viewModel.username
     }
 }
