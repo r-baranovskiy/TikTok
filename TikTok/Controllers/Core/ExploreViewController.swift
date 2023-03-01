@@ -16,7 +16,6 @@ final class ExploreViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .systemOrange
         setUpSearchBar()
         configureModels()
         setUpCollectionView()
@@ -60,20 +59,20 @@ final class ExploreViewController: UIViewController {
             )
         )
         
-                sections.append(
-                    ExploreSection(
-                        type: .users,
-                        cells: [
-                            .user(viewModel: ExploreUserViewModel(
-                                profilePicture: nil,
-                                username: "",
-                                followerCount: 10,
-                                handler: {
-                                    //
-                                }))
-                        ]
-                    )
-                )
+        sections.append(
+            ExploreSection(
+                type: .users,
+                cells: [
+                    .user(viewModel: ExploreUserViewModel(
+                        profilePicture: nil,
+                        username: "",
+                        followerCount: 10,
+                        handler: {
+                            //
+                        }))
+                ]
+            )
+        )
         
         sections.append(
             ExploreSection(
@@ -81,21 +80,21 @@ final class ExploreViewController: UIViewController {
                 cells: [
                     .hashtag(viewModel: ExploreHashtagViewModel(
                         text: "#foryou",
-                        icon: nil,
+                        icon: UIImage(systemName: "bell"),
                         count: 1,
                         handler: {
                             
                         })),
                     .hashtag(viewModel: ExploreHashtagViewModel(
-                        text: "#foryou",
-                        icon: nil,
+                        text: "#iphone12",
+                        icon: UIImage(systemName: "house"),
                         count: 1,
                         handler: {
                             
                         })),
                     .hashtag(viewModel: ExploreHashtagViewModel(
-                        text: "#foryou",
-                        icon: nil,
+                        text: "#testtiktok",
+                        icon: UIImage(systemName: "bell"),
                         count: 1,
                         handler: {
                             
@@ -224,6 +223,7 @@ final class ExploreViewController: UIViewController {
             ExploreHashtagCollectionViewCell.self,
             forCellWithReuseIdentifier: ExploreHashtagCollectionViewCell.identifier)
         
+        collectionView.backgroundColor = .systemBackground
         collectionView.delegate = self
         collectionView.dataSource = self
         
@@ -241,6 +241,24 @@ extension ExploreViewController: UISearchBarDelegate {
 // MARK: - UICollectionViewDelegate, UICollectionViewDataSource
 
 extension ExploreViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        collectionView.deselectItem(at: indexPath, animated: true)
+        
+        HapticsManager.shared.vibrateForSelection()
+        let model = sections[indexPath.section].cells[indexPath.row]
+        
+        switch model {
+        case .banner(viewModel: let viewModel):
+            break
+        case .post(viewModel: let viewModel):
+            break
+        case .hashtag(viewModel: let viewModel):
+            break
+        case .user(viewModel: let viewModel):
+            break
+        }
+    }
+    
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return sections.count
     }
