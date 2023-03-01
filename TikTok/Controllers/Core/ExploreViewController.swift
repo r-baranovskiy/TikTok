@@ -33,25 +33,15 @@ final class ExploreViewController: UIViewController {
     }
     
     private func configureModels() {
-        var cells = [ExploreCell]()
-        for _ in 0...100 {
-            let cell = ExploreCell.banner(
-                viewModel: ExploreBannerViewModel(
-                    image: nil,
-                    title: "Foo",
-                    handler: {
-                        
-                    }
-                )
-            )
-            cells.append(cell)
-        }
         sections.append(
             ExploreSection(
                 type: .banners,
-                cells: cells
+                cells: ExploreManager.shared.getExploreBanners().compactMap({
+                    return ExploreCell.banner(viewModel: $0)
+                })
             )
         )
+        
         
         var posts = [ExploreCell]()
         for _ in 0...40 {

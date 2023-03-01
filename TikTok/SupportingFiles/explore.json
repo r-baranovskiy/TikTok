@@ -1,0 +1,230 @@
+{
+  "banners": [
+    {
+      "id": "nature",
+      "image": "img1",
+      "title": "Nature",
+      "action": "hashtag"
+    },
+    {
+      "id": "jason_derulo",
+      "image": "img2",
+      "title": "Jason Derulo",
+      "action": "user"
+    },
+    {
+      "id": "newyorkcity",
+      "image": "img3",
+      "title": "New York City",
+      "action": "hashtag"
+    },
+    {
+      "id": "2131224214",
+      "image": "img4",
+      "title": "Savage Love Dance",
+      "action": "post"
+    }
+  ],
+  "trendingPosts": [
+    {
+      "id": "1",
+      "image": "img5",
+      "caption": "2020 has been crazy!",
+    },
+    {
+      "id": "2",
+      "image": "img6",
+      "caption": "Australia trip 2020!",
+    },
+    {
+      "id": "3",
+      "image": "img7",
+      "caption": "What do you actually want!",
+    },
+    {
+      "id": "4",
+      "image": "img8",
+      "caption": "Follow on instagram!",
+    },
+    {
+      "id": "5",
+      "image": "img9",
+      "caption": "Finding more friends!",
+    },
+    {
+      "id": "6",
+      "image": "img10",
+      "caption": "Day trip to the beach!",
+    },
+    {
+      "id": "7",
+      "image": "img11",
+      "caption": "Merry Christmas to all!",
+    },
+    {
+      "id": "8",
+      "image": "img12",
+      "caption": "This tiktok app course is amazing!",
+    },
+    {
+      "id": "9",
+      "image": "img13",
+      "caption": "For you page is rigged!",
+    },
+    {
+      "id": "10",
+      "image": "img14",
+      "caption": "Try the WAP dance!",
+    }
+  ],
+  "creators": [
+    {
+      "id": "user1",
+      "image": "img15",
+      "username": "kanyewest",
+      "followers_count": 1200
+    },
+    {
+      "id": "user2",
+      "image": "img16",
+      "username": "kimkardashian",
+      "followers_count": 1200
+    },
+    {
+      "id": "user3",
+      "image": "img17",
+      "username": "toiley",
+      "followers_count": 1200
+    },
+    {
+      "id": "user4",
+      "image": "img18",
+      "username": "charlidamelio",
+      "followers_count": 1200
+    },
+    {
+      "id": "user5",
+      "image": "img1",
+      "username": "addisonrae",
+      "followers_count": 1200
+    }
+  ],
+  "recentPosts": [
+    {
+      "id": "1",
+      "image": "img2",
+      "caption": "2020 has been crazy!",
+    },
+    {
+      "id": "2",
+      "image": "img3",
+      "caption": "Australia trip 2020!",
+    },
+    {
+      "id": "3",
+      "image": "img4",
+      "caption": "What do you actually want!",
+    },
+    {
+      "id": "4",
+      "image": "img5",
+      "caption": "Follow on instagram!",
+    },
+    {
+      "id": "5",
+      "image": "img6",
+      "caption": "Finding more friends!",
+    },
+    {
+      "id": "6",
+      "image": "img7",
+      "caption": "Day trip to the beach!",
+    }
+  ],
+  "hashtags": [
+    {
+      "image": "tag.circle",
+      "tag": "foryoupage",
+      "count": 24000
+    },
+    {
+      "image": "tag.circle",
+      "tag": "yearInReview",
+      "count": 1000
+    },
+    {
+      "image": "tag.circle",
+      "tag": "2020bestnine",
+      "count": 2000
+    },
+    {
+      "image": "tag.circle",
+      "tag": "summertime",
+      "count": 400
+    }
+  ],
+  "popular": [
+    {
+      "id": "1",
+      "image": "img8",
+      "caption": "2020 has been crazy!",
+    },
+    {
+      "id": "2",
+      "image": "img9",
+      "caption": "Australia trip 2020!",
+    },
+    {
+      "id": "3",
+      "image": "img10",
+      "caption": "What do you actually want!",
+    },
+    {
+      "id": "4",
+      "image": "img11",
+      "caption": "Follow on instagram!",
+    },
+    {
+      "id": "5",
+      "image": "img12",
+      "caption": "Finding more friends!",
+    },
+    {
+      "id": "6",
+      "image": "img13",
+      "caption": "Day trip to the beach!",
+    }
+  ],
+  "recommended": [
+    {
+      "id": "1",
+      "image": "img14",
+      "caption": "2020 has been crazy!",
+    },
+    {
+      "id": "2",
+      "image": "img15",
+      "caption": "Australia trip 2020!",
+    },
+    {
+      "id": "3",
+      "image": "img16",
+      "caption": "What do you actually want!",
+    },
+    {
+      "id": "4",
+      "image": "img17",
+      "caption": "Follow on instagram!",
+    },
+    {
+      "id": "5",
+      "image": "img18",
+      "caption": "Finding more friends!",
+    },
+    {
+      "id": "6",
+      "image": "img1",
+      "caption": "Day trip to the beach!",
+    }
+  ]
+}
