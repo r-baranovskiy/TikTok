@@ -1,4 +1,5 @@
 import UIKit
+import SafariServices
 
 final class SignInViewController: UIViewController {
     
@@ -23,7 +24,7 @@ final class SignInViewController: UIViewController {
         type: .plain, title: "Forgot Password")
     private let signUpButton = AuthButton(
         type: .plain, title: "New User? Create account")
-
+    
     // MARK: - Lifecycle
     
     override func viewDidLoad() {
@@ -32,8 +33,7 @@ final class SignInViewController: UIViewController {
         title = "Sign In"
         addSubview()
         configureButtons()
-        emailTextField.delegate = self
-        passwordTextField.delegate = self
+        configureTextField()
     }
     
     override func viewDidLayoutSubviews() {
@@ -77,27 +77,82 @@ final class SignInViewController: UIViewController {
             width: view.width - 40, height: 55)
     }
     
+    // MARK: - Behaviour
+    
     private func configureButtons() {
-        signInButton.addTarget(self, action: #selector(didTapSignIn),
-                               for: .touchUpInside)
-        signUpButton.addTarget(self, action: #selector(didTapSignUp),
-                               for: .touchUpInside)
+        signInButton.addTarget(
+            self, action: #selector(didTapSignIn), for: .touchUpInside)
+        signUpButton.addTarget(
+            self, action: #selector(didTapSignUp), for: .touchUpInside)
         forgotPasswordButton.addTarget(
             self, action: #selector(didTapForgotPassword), for: .touchUpInside)
     }
     
-    // MARK: - Behaviour
+    private func configureTextField() {
+        emailTextField.delegate = self
+        passwordTextField.delegate = self
+        
+        let toolBar = UIToolbar(frame: CGRect(
+            x: 0, y: 0, width: view.width, height: 50))
+        toolBar.items = [
+            UIBarButtonItem(
+                barButtonSystemItem: .flexibleSpace,target: self, action: nil),
+            UIBarButtonItem(
+                title: "Done", style: .done, target: self,
+                action: #selector(didTapKeyboardDone))
+        ]
+        toolBar.sizeToFit()
+        emailTextField.inputAccessoryView = toolBar
+        passwordTextField.inputAccessoryView = toolBar
+    }
     
     @objc private func didTapSignIn() {
+        didTapKeyboardDone()
         
+        guard let email = emailTextField.text,
+              let password = passwordTextField.text,
+              !email.trimmingCharacters(in: .whitespaces).isEmpty,
+              !password.trimmingCharacters(in: .whitespaces).isEmpty,
+              password.count >= 6 else {
+                  
+                  let alert = UIAlertController(
+                    title: "Woops",
+                    message: "Please enter a valid email and password to sign in",
+                    preferredStyle: .alert)
+                  alert.addAction(UIAlertAction(title: "Dismis", style: .cancel))
+            present(alert, animated: true)
+            return
+        }
+        
+        AuthManager.shared.signIn(with: email, password: password) { loggedIn in
+            if loggedIn {
+                // dismiss
+            } else {
+                // show error
+            }
+        }
     }
     
     @objc private func didTapSignUp() {
-        
+        let vc = SignUpViewController()
+        vc.title = "Create Account"
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     @objc private func didTapForgotPassword() {
+        didTapKeyboardDone()
+        guard let url = URL(
+            string: "https://www.tiktok.com/forgot-password") else {
+            return
+        }
         
+        let vc = SFSafariViewController(url: url)
+        present(vc, animated: true)
+    }
+    
+    @objc private func didTapKeyboardDone() {
+        emailTextField.resignFirstResponder()
+        passwordTextField.resignFirstResponder()
     }
 }
 

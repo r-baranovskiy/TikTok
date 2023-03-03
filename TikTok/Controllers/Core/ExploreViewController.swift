@@ -33,7 +33,7 @@ final class ExploreViewController: UIViewController {
     
     private func setUpSearchBar() {
         navigationItem.titleView = searchBar
-        navigationController?.navigationBar.tintColor = .label
+        navigationController?.navigationBar.tintColor = .systemBlue
         searchBar.delegate = self
     }
     

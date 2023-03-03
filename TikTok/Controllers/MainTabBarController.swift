@@ -26,6 +26,7 @@ final class MainTabBarController: UITabBarController {
             }
             let navVC = UINavigationController(rootViewController: vc)
             navVC.modalPresentationStyle = .fullScreen
+            navVC.navigationBar.tintColor = .label
             present(navVC, animated: false)
         }
     }

@@ -18,7 +18,7 @@ final class AuthManager {
     
     // Public
     
-    public func signIn(with method: SignInMethod) {
+    public func signIn(with emfil: String, password: String, completion: @escaping (Bool) -> Void) {
         
     }
     
