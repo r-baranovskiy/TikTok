@@ -5,7 +5,6 @@ final class MainTabBarController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .red
         configureMainTabBar()
     }
     
@@ -36,6 +35,8 @@ final class MainTabBarController: UITabBarController {
         viewControllers = [
             homeNavVC, exploreNavVC, cameraVC, notificationsNavVC, profileNavVC
         ]
+        
+        tabBar.backgroundColor = .systemBackground
     }
     
     private func createNavigationVC(rootVC: UIViewController, imageSystemName: String) -> UINavigationController {
