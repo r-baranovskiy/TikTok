@@ -8,7 +8,7 @@ final class AuthManager {
     public var isSignedIn: Bool {
         return Auth.auth().currentUser != nil
     }
-        
+    
     private init() {}
     
     enum SignInMethod {
