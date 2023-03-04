@@ -1,7 +1,7 @@
 import UIKit
 import SafariServices
 
-final class SignInViewController: UIViewController {
+final class SignInViewController: UIViewController, UITextFieldDelegate {
     
     // MARK: - UI Constants
     
@@ -36,10 +36,17 @@ final class SignInViewController: UIViewController {
         configureTextField()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        emailTextField.becomeFirstResponder()
+    }
+    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         setUpSizes()
     }
+    
+    // MARK: - Appearance
     
     private func addSubview() {
         view.addSubview(logoImageView)
@@ -124,7 +131,7 @@ final class SignInViewController: UIViewController {
             return
         }
         
-        AuthManager.shared.signIn(with: email, password: password) { loggedIn in
+        AuthManager.shared.signIn(with: email, password) { loggedIn in
             if loggedIn {
                 // dismiss
             } else {
@@ -153,29 +160,6 @@ final class SignInViewController: UIViewController {
     @objc private func didTapKeyboardDone() {
         emailTextField.resignFirstResponder()
         passwordTextField.resignFirstResponder()
-    }
-}
-
-extension SignInViewController: UITextFieldDelegate {
-    
-}
-
-import SwiftUI
-struct ListProvider: PreviewProvider {
-    static var previews: some View {
-        ContainerView().edgesIgnoringSafeArea(.all)
-    }
-    
-    struct ContainerView: UIViewControllerRepresentable {
-        
-        let listVC = SignInViewController()
-        
-        func makeUIViewController(context: UIViewControllerRepresentableContext<ListProvider.ContainerView>) -> SignInViewController {
-            return listVC
-        }
-        
-        func updateUIViewController(_ uiViewController: ListProvider.ContainerView.UIViewControllerType, context: UIViewControllerRepresentableContext<ListProvider.ContainerView>) {
-        }
     }
 }
 

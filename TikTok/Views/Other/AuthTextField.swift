@@ -5,6 +5,7 @@ final class AuthTextField: UITextField {
     enum FieldType {
         case email
         case password
+        case username
         
         var title: String {
             switch self {
@@ -12,6 +13,8 @@ final class AuthTextField: UITextField {
                 return "Email address"
             case .password:
                 return "Password"
+            case .username:
+                return "Username"
             }
         }
     }
