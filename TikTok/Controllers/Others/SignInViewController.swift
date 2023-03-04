@@ -121,21 +121,31 @@ final class SignInViewController: UIViewController, UITextFieldDelegate {
               !email.trimmingCharacters(in: .whitespaces).isEmpty,
               !password.trimmingCharacters(in: .whitespaces).isEmpty,
               password.count >= 6 else {
-                  
-                  let alert = UIAlertController(
-                    title: "Woops",
-                    message: "Please enter a valid email and password to sign in",
-                    preferredStyle: .alert)
-                  alert.addAction(UIAlertAction(title: "Dismis", style: .cancel))
+            
+            let alert = UIAlertController(
+                title: "Woops",
+                message: "Please enter a valid email and password to sign in",
+                preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Dismis", style: .cancel))
             present(alert, animated: true)
             return
         }
         
-        AuthManager.shared.signIn(with: email, password) { loggedIn in
-            if loggedIn {
-                // dismiss
-            } else {
-                // show error
+        AuthManager.shared.signIn(with: email, password) { [weak self] result in
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let email):
+                    print(email)
+                    break
+                case .failure(let error):
+                    let alert = UIAlertController(
+                        title: "Sign In Failed",
+                        message: error.localizedDescription,
+                        preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "Dismis", style: .cancel))
+                    self?.present(alert, animated: true)
+                    self?.passwordTextField.text = nil
+                }
             }
         }
     }

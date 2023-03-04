@@ -47,6 +47,7 @@ final class AuthTextField: UITextField {
             isSecureTextEntry = true
         } else if type == .email {
             keyboardType = .emailAddress
+            textContentType = .emailAddress
         }
     }
 }

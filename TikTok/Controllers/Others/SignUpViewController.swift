@@ -114,14 +114,14 @@ final class SignUpViewController: UIViewController, UITextFieldDelegate {
     
     @objc private func didTapSignUp() {
         didTapKeyboardDone()
-        
+
         guard let username = usernameTextField.text,
               let email = emailTextField.text,
               let password = passwordTextField.text,
               !username.trimmingCharacters(in: .whitespaces).isEmpty,
               !email.trimmingCharacters(in: .whitespaces).isEmpty,
               !password.trimmingCharacters(in: .whitespaces).isEmpty,
-              username.contains(" "), username.contains("."),
+              !username.contains(" "), !username.contains("."),
               password.count >= 6 else {
             
             let alert = UIAlertController(
@@ -136,8 +136,19 @@ Please make sure to enter a valid username, email, and password. Your password m
             return
         }
         
-        AuthManager.shared.signIn(with: username, password) { success in
-            //
+        AuthManager.shared.signUp(with: username, email, password) { [weak self] success in
+            DispatchQueue.main.async {
+                if success {
+                    print("signed up")
+                } else {
+                    let alert = UIAlertController(
+                        title: "Sign Up Failed",
+                        message: "Something went wrong when trying to register. Please try again",
+                        preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "Dismis", style: .cancel))
+                    self?.present(alert, animated: true)
+                }
+            }
         }
     }
     
