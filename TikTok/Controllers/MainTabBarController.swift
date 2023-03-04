@@ -3,10 +3,32 @@ import UIKit
 /// Root tab bar controller
 final class MainTabBarController: UITabBarController {
     
+    private var signInPresented = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .red
         configureMainTabBar()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if !signInPresented {
+            presentSignInIfNeeded()
+        }
+    }
+    
+    private func presentSignInIfNeeded() {
+        if !AuthManager.shared.isSignedIn {
+            signInPresented = true
+            let vc = SignInViewController()
+            vc.completion = { [weak self] in
+                self?.signInPresented = false
+            }
+            let navVC = UINavigationController(rootViewController: vc)
+            navVC.modalPresentationStyle = .fullScreen
+            navVC.navigationBar.tintColor = .label
+            present(navVC, animated: false)
+        }
     }
     
     private func configureMainTabBar() {
@@ -36,6 +58,8 @@ final class MainTabBarController: UITabBarController {
         viewControllers = [
             homeNavVC, exploreNavVC, cameraVC, notificationsNavVC, profileNavVC
         ]
+        
+        tabBar.backgroundColor = .systemBackground
     }
     
     private func createNavigationVC(rootVC: UIViewController, imageSystemName: String) -> UINavigationController {

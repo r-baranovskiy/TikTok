@@ -210,10 +210,8 @@ final class PostViewController: UIViewController {
     
     private func setUpSizeForButtons() {
         let size: CGFloat = 40
-        let tabBarHeight: CGFloat = tabBarController?.tabBar.height ?? 0
         
-        let yStart: CGFloat = view.height - (size * 4) - 30 -
-        view.safeAreaInsets.bottom - tabBarHeight
+        let yStart: CGFloat = view.height - (size * 4) - 30 - view.safeAreaInsets.bottom
         
         for (index, button) in [likeButton, commentButton, shareButton]
             .enumerated() {
@@ -236,7 +234,7 @@ final class PostViewController: UIViewController {
         
         caprionLabel.frame = CGRect(
             x: 5, y: view.height - 10 - view.safeAreaInsets.bottom -
-            labelSize.height - (tabBarController?.tabBar.height ?? 0),
+            labelSize.height,
             width: view.width - 52, height: labelSize.height)
     }
     

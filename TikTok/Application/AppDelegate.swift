@@ -12,9 +12,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window.rootViewController = MainTabBarController()
         self.window = window
         self.window?.makeKeyAndVisible()
-        
         FirebaseApp.configure()
-        
+        AuthManager.shared.signOut { _ in
+            //
+        }
         return true
     }
 }
