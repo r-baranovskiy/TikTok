@@ -27,6 +27,7 @@ final class CaptionViewController: UIViewController {
     }
     
     @objc private func didTapPost() {
+        let newVideoName = StorageManager.shared.generateVideoName()
         
     }
 }
