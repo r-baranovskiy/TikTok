@@ -53,6 +53,7 @@
 		80B8831929B549FC00BF7D95 /* ExploreUserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B8831529B549FC00BF7D95 /* ExploreUserViewModel.swift */; };
 		80B8831A29B549FC00BF7D95 /* ExplorePostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B8831629B549FC00BF7D95 /* ExplorePostViewModel.swift */; };
 		80B8831C29B55DB000BF7D95 /* RecordButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B8831B29B55DB000BF7D95 /* RecordButton.swift */; };
+		80B8831E29B56AA300BF7D95 /* CaptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B8831D29B56AA300BF7D95 /* CaptionViewController.swift */; };
 		80F17ED729A3AF180061B6F4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F17ED629A3AF180061B6F4 /* AppDelegate.swift */; };
 		80F17ED929A3AF180061B6F4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F17ED829A3AF180061B6F4 /* SceneDelegate.swift */; };
 		80F17EE029A3AF190061B6F4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80F17EDF29A3AF190061B6F4 /* Assets.xcassets */; };
@@ -100,6 +101,7 @@
 		80B8831529B549FC00BF7D95 /* ExploreUserViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExploreUserViewModel.swift; sourceTree = "<group>"; };
 		80B8831629B549FC00BF7D95 /* ExplorePostViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExplorePostViewModel.swift; sourceTree = "<group>"; };
 		80B8831B29B55DB000BF7D95 /* RecordButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordButton.swift; sourceTree = "<group>"; };
+		80B8831D29B56AA300BF7D95 /* CaptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptionViewController.swift; sourceTree = "<group>"; };
 		80F17ED329A3AF180061B6F4 /* TikTok.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TikTok.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		80F17ED629A3AF180061B6F4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		80F17ED829A3AF180061B6F4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -222,6 +224,7 @@
 				8090EA4629A3CAF6003BDF33 /* SettingsViewController.swift */,
 				8090EA4829A3CB0A003BDF33 /* PostViewController.swift */,
 				8078641B29A7F83500A6B3E3 /* CommentsViewController.swift */,
+				80B8831D29B56AA300BF7D95 /* CaptionViewController.swift */,
 			);
 			path = Others;
 			sourceTree = "<group>";
@@ -420,6 +423,7 @@
 				8078641C29A7F83500A6B3E3 /* CommentsViewController.swift in Sources */,
 				80B8831C29B55DB000BF7D95 /* RecordButton.swift in Sources */,
 				8090EA4B29A3CB24003BDF33 /* HomeViewController.swift in Sources */,
+				80B8831E29B56AA300BF7D95 /* CaptionViewController.swift in Sources */,
 				8090EA3B29A3CA86003BDF33 /* DatabaseManager.swift in Sources */,
 				8090EA3929A3CA7C003BDF33 /* StorageManager.swift in Sources */,
 				80B8831929B549FC00BF7D95 /* ExploreUserViewModel.swift in Sources */,

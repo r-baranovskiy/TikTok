@@ -11,6 +11,10 @@ final class CameraViewController: UIViewController {
     
     private var capturePreviewLayer: AVCaptureVideoPreviewLayer? = nil
     
+    private var previewLayer: AVPlayerLayer?
+    
+    private var recordedVideoURL: URL?
+    
     private let cameraView: UIView = {
         let view = UIView()
         view.clipsToBounds = true
@@ -81,9 +85,21 @@ final class CameraViewController: UIViewController {
     }
     
     @objc private func didTapClose() {
-        captureSession.stopRunning()
-        tabBarController?.tabBar.isHidden = false
-        tabBarController?.selectedIndex = 0
+        navigationItem.rightBarButtonItem = nil
+        recordButton.isHidden = false
+        
+        if previewLayer != nil {
+            previewLayer?.removeFromSuperlayer()
+            previewLayer = nil
+        } else {
+            captureSession.stopRunning()
+            tabBarController?.tabBar.isHidden = false
+            tabBarController?.selectedIndex = 0
+        }
+    }
+    
+    @objc private func didTapNext() {
+        
     }
     
     // MARK: - Camera action
@@ -140,6 +156,20 @@ extension CameraViewController: AVCaptureFileOutputRecordingDelegate {
             return
         }
         
-        print("Finished recoring to url \(outputFileURL.absoluteString)")
+        recordedVideoURL = outputFileURL
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(
+            title: "Next", style: .done, target: self,
+            action: #selector(didTapNext))
+        
+        let player = AVPlayer(url: outputFileURL)
+        previewLayer = AVPlayerLayer(player: player)
+        previewLayer?.videoGravity = .resizeAspectFill
+        previewLayer?.frame = cameraView.bounds
+        
+        guard let previewLayer = previewLayer else { return }
+        recordButton.isHidden = true
+        cameraView.layer.addSublayer(previewLayer)
+        previewLayer.player?.play()
     }
 }
