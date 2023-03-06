@@ -36,7 +36,8 @@ final class MainTabBarController: UITabBarController {
             rootVC: HomeViewController(), imageSystemName: "house")
         let exploreNavVC = createNavigationVC(
             rootVC: ExploreViewController(), imageSystemName: "safari")
-        let cameraVC = CameraViewController()
+        let cameraVC = createNavigationVC(
+            rootVC: CameraViewController(), imageSystemName: "camera")
         let notificationsNavVC = createNavigationVC(
             rootVC: NotificationsViewController(), imageSystemName: "bell")
         let profileNavVC = createNavigationVC(
@@ -45,15 +46,13 @@ final class MainTabBarController: UITabBarController {
                            identifier: UUID().uuidString)),
             imageSystemName: "person.circle")
         
-        cameraVC.tabBarItem = UITabBarItem(
-            title: nil, image: UIImage(
-                systemName: "camera",
-                withConfiguration: UIImage.SymbolConfiguration(weight: .heavy)),
-            tag: 3)
-        
         homeNavVC.navigationBar.backgroundColor = .clear
         homeNavVC.navigationBar.setBackgroundImage(UIImage(), for: .default)
         homeNavVC.navigationBar.shadowImage = UIImage()
+        
+        cameraVC.navigationBar.backgroundColor = .clear
+        cameraVC.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        cameraVC.navigationBar.shadowImage = UIImage()
         
         viewControllers = [
             homeNavVC, exploreNavVC, cameraVC, notificationsNavVC, profileNavVC
