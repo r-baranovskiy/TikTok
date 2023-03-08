@@ -63,6 +63,7 @@ final class MainTabBarController: UITabBarController {
     
     private func createNavigationVC(rootVC: UIViewController, imageSystemName: String) -> UINavigationController {
         let navVC = UINavigationController(rootViewController: rootVC)
+        navVC.navigationBar.tintColor = .label
         navVC.tabBarItem.image = UIImage(
             systemName: imageSystemName, withConfiguration: UIImage.SymbolConfiguration(weight: .heavy))
         return navVC

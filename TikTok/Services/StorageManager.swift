@@ -15,8 +15,15 @@ final class StorageManager {
         
     }
     
-    public func uploadVideoURL(from url: URL, completion: @escaping (Bool) -> Void) {
-        storageBucket.child(<#T##path: String##String#>)
+    public func uploadVideo (from url: URL, fileName: String,
+                             completion: @escaping (Bool) -> Void) {
+        guard let username = UserDefaults.standard.string(forKey: "username") else {
+            return
+        }
+        
+        storageBucket.child("videos/\(username)/\(fileName)").putFile(from: url) { _, error in
+            completion(error == nil)
+        }
     }
     
     public func generateVideoName() -> String {
