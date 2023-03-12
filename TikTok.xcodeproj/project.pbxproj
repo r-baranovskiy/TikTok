@@ -24,6 +24,7 @@
 		805FA4FF29B890EA002C97E5 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 805FA4FE29B890EA002C97E5 /* FirebaseStorage */; };
 		805FA50129B8BECD002C97E5 /* UIAlertController + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805FA50029B8BECD002C97E5 /* UIAlertController + Extension.swift */; };
 		8078641C29A7F83500A6B3E3 /* CommentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8078641B29A7F83500A6B3E3 /* CommentsViewController.swift */; };
+		808E522429BD5ED100B7B2C7 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808E522329BD5ED100B7B2C7 /* Notifications.swift */; };
 		8090EA2729A3C745003BDF33 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8090EA2629A3C745003BDF33 /* MainTabBarController.swift */; };
 		8090EA3929A3CA7C003BDF33 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8090EA3829A3CA7C003BDF33 /* StorageManager.swift */; };
 		8090EA3B29A3CA86003BDF33 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8090EA3A29A3CA86003BDF33 /* DatabaseManager.swift */; };
@@ -73,6 +74,7 @@
 		8022D8EC29A992E500B0ECCB /* PostModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostModel.swift; sourceTree = "<group>"; };
 		805FA50029B8BECD002C97E5 /* UIAlertController + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController + Extension.swift"; sourceTree = "<group>"; };
 		8078641B29A7F83500A6B3E3 /* CommentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsViewController.swift; sourceTree = "<group>"; };
+		808E522329BD5ED100B7B2C7 /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
 		8090EA2629A3C745003BDF33 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		8090EA3829A3CA7C003BDF33 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		8090EA3A29A3CA86003BDF33 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 				800AF2D629AD770700759A44 /* ExploreSection.swift */,
 				800AF2D829AD773D00759A44 /* ExploreCell.swift */,
 				800AF2DA29AD778000759A44 /* ExploreSectionType.swift */,
+				808E522329BD5ED100B7B2C7 /* Notifications.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -441,6 +444,7 @@
 				8090EA4F29A3CB31003BDF33 /* CameraViewController.swift in Sources */,
 				800AF2D729AD770700759A44 /* ExploreSection.swift in Sources */,
 				80223D9729A401E200245149 /* UIView + Extension.swift in Sources */,
+				808E522429BD5ED100B7B2C7 /* Notifications.swift in Sources */,
 				805FA50129B8BECD002C97E5 /* UIAlertController + Extension.swift in Sources */,
 				8090EA4729A3CAF6003BDF33 /* SettingsViewController.swift in Sources */,
 				80A1515829AEE07800B8B745 /* ExploreUserCollectionViewCell.swift in Sources */,

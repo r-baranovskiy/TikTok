@@ -29,12 +29,13 @@ final class NotificationsViewController: UIViewController {
     
     // MARK: - Variables
     
-    private var notifications = [String]()
+    private var notifications = [Notification]()
     
     // MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Notifications"
         addSubviews()
         tablewView.delegate = self
         tablewView.dataSource = self
@@ -88,10 +89,11 @@ extension NotificationsViewController: UITableViewDelegate, UITableViewDataSourc
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let model = notifications[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         
         var content = cell.defaultContentConfiguration()
-        content.text = "Hello"
+        content.text = model.text
         cell.contentConfiguration = content
         return cell
     }
