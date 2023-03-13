@@ -17,10 +17,18 @@ enum NotificationType {
     }
 }
 
-struct Notification {
+final class Notification {
+    let identifier = UUID().uuidString
+    var isHiden = false
     let text: String
     let type: NotificationType
     let date: Date
+    
+    init(text: String, type: NotificationType, date: Date) {
+        self.text = text
+        self.type = type
+        self.date = date
+    }
     
     static func mockData() -> [Notification] {
         return Array(0...100).compactMap({

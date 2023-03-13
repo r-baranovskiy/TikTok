@@ -35,6 +35,8 @@ final class NotificationsViewController: UIViewController {
         return spinner
     }()
     
+    private let refreshControl = UIRefreshControl()
+    
     // MARK: - Variables
     
     private var notifications = [Notification]()
@@ -45,10 +47,32 @@ final class NotificationsViewController: UIViewController {
         super.viewDidLoad()
         title = "Notifications"
         addSubviews()
+        setUpRefreshControl()
         tablewView.delegate = self
         tablewView.dataSource = self
         fetchNotifications()
     }
+    
+    // MARK: - Behaviour
+    
+    private func setUpRefreshControl() {
+        refreshControl.addTarget(
+            self, action: #selector(didPullToRefresh), for: .valueChanged)
+        tablewView.refreshControl = refreshControl
+    }
+    
+    @objc private func didPullToRefresh(_ sender: UIRefreshControl) {
+        sender.beginRefreshing()
+        DatabaseManager.shared.getNotifications { [weak self] notifications in
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+                self?.notifications = notifications
+                sender.endRefreshing()
+                self?.tablewView.reloadData()
+            })
+        }
+    }
+    
+    // MARK: - Appearance
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
@@ -129,5 +153,32 @@ extension NotificationsViewController: UITableViewDelegate, UITableViewDataSourc
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 80
+    }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        return .delete
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        guard editingStyle == .delete else { return }
+        let notification = notifications[indexPath.row]
+        notification.isHiden = true
+        
+        DatabaseManager.shared.markNotificationAsHidden(notificationID: notification.identifier) { [weak self] success in
+            DispatchQueue.main.async {
+                if success {
+                    self?.notifications = self?.notifications.filter({
+                        $0.isHiden == false
+                    }) ?? []
+                    tableView.beginUpdates()
+                    tableView.deleteRows(at: [indexPath], with: .none)
+                    tableView.endUpdates()
+                }
+            }
+        }
     }
 }
