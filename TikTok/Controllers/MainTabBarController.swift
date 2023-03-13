@@ -54,17 +54,20 @@ final class MainTabBarController: UITabBarController {
         cameraVC.navigationBar.setBackgroundImage(UIImage(), for: .default)
         cameraVC.navigationBar.shadowImage = UIImage()
         
+        notificationsNavVC.title = "Notifications"
+        
         viewControllers = [
             homeNavVC, exploreNavVC, cameraVC, notificationsNavVC, profileNavVC
         ]
-        
+        tabBar.tintColor = .label
         tabBar.backgroundColor = .systemBackground
     }
     
     private func createNavigationVC(rootVC: UIViewController, imageSystemName: String) -> UINavigationController {
         let navVC = UINavigationController(rootViewController: rootVC)
+        navVC.navigationBar.tintColor = .label
         navVC.tabBarItem.image = UIImage(
-            systemName: imageSystemName, withConfiguration: UIImage.SymbolConfiguration(weight: .heavy))
+            systemName: imageSystemName, withConfiguration: UIImage.SymbolConfiguration(weight: .semibold))
         return navVC
     }
 }

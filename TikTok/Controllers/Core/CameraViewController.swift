@@ -99,7 +99,9 @@ final class CameraViewController: UIViewController {
     }
     
     @objc private func didTapNext() {
-        
+        guard let url = recordedVideoURL else { return }
+        let vc = CaptionViewController(videoURL: url)
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     // MARK: - Camera action
