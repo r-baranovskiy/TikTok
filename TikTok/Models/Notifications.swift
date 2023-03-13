@@ -26,7 +26,7 @@ struct Notification {
         return Array(0...100).compactMap({
             Notification(
                 text: "Something happened \($0)",
-                type: .userFollow(username: "Anastasiya"),
+                type: .postComment(postName: "ANASTASIYA "),
                 date: Date())
         })
     }
